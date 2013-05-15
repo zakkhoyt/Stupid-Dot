@@ -24,6 +24,11 @@
 		C62F81BF174451FA001A792A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8197174451F9001A792A /* Foundation.framework */; };
 		C62F81C7174451FA001A792A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C62F81C5174451FA001A792A /* InfoPlist.strings */; };
 		C62F81CA174451FA001A792A /* Stupid_DotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81C9174451FA001A792A /* Stupid_DotTests.m */; };
+		C62F81DE1744521B001A792A /* VWWScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81D51744521B001A792A /* VWWScanner.m */; };
+		C62F81DF1744521B001A792A /* VWWScannerDot.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81D71744521B001A792A /* VWWScannerDot.m */; };
+		C62F81E01744521B001A792A /* VWWScannerLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81D91744521B001A792A /* VWWScannerLine.m */; };
+		C62F81E11744521B001A792A /* VWWScannerTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81DB1744521B001A792A /* VWWScannerTarget.m */; };
+		C62F81E21744521B001A792A /* VWWScannerVector.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81DD1744521B001A792A /* VWWScannerVector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,16 @@
 		C62F81C6174451FA001A792A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C62F81C8174451FA001A792A /* Stupid_DotTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stupid_DotTests.h; sourceTree = "<group>"; };
 		C62F81C9174451FA001A792A /* Stupid_DotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stupid_DotTests.m; sourceTree = "<group>"; };
+		C62F81D41744521B001A792A /* VWWScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScanner.h; sourceTree = "<group>"; };
+		C62F81D51744521B001A792A /* VWWScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScanner.m; sourceTree = "<group>"; };
+		C62F81D61744521B001A792A /* VWWScannerDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScannerDot.h; sourceTree = "<group>"; };
+		C62F81D71744521B001A792A /* VWWScannerDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerDot.m; sourceTree = "<group>"; };
+		C62F81D81744521B001A792A /* VWWScannerLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScannerLine.h; sourceTree = "<group>"; };
+		C62F81D91744521B001A792A /* VWWScannerLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerLine.m; sourceTree = "<group>"; };
+		C62F81DA1744521B001A792A /* VWWScannerTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScannerTarget.h; sourceTree = "<group>"; };
+		C62F81DB1744521B001A792A /* VWWScannerTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerTarget.m; sourceTree = "<group>"; };
+		C62F81DC1744521B001A792A /* VWWScannerVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScannerVector.h; sourceTree = "<group>"; };
+		C62F81DD1744521B001A792A /* VWWScannerVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerVector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +134,7 @@
 		C62F819B174451F9001A792A /* Stupid Dot */ = {
 			isa = PBXGroup;
 			children = (
+				C62F81D31744521B001A792A /* Scanner */,
 				C62F81A4174451F9001A792A /* VWWAppDelegate.h */,
 				C62F81A5174451FA001A792A /* VWWAppDelegate.m */,
 				C62F81AD174451FA001A792A /* MainStoryboard_iPhone.storyboard */,
@@ -161,6 +177,23 @@
 				C62F81C5174451FA001A792A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C62F81D31744521B001A792A /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				C62F81D41744521B001A792A /* VWWScanner.h */,
+				C62F81D51744521B001A792A /* VWWScanner.m */,
+				C62F81D61744521B001A792A /* VWWScannerDot.h */,
+				C62F81D71744521B001A792A /* VWWScannerDot.m */,
+				C62F81D81744521B001A792A /* VWWScannerLine.h */,
+				C62F81D91744521B001A792A /* VWWScannerLine.m */,
+				C62F81DA1744521B001A792A /* VWWScannerTarget.h */,
+				C62F81DB1744521B001A792A /* VWWScannerTarget.m */,
+				C62F81DC1744521B001A792A /* VWWScannerVector.h */,
+				C62F81DD1744521B001A792A /* VWWScannerVector.m */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +311,11 @@
 				C62F81A2174451F9001A792A /* main.m in Sources */,
 				C62F81A6174451FA001A792A /* VWWAppDelegate.m in Sources */,
 				C62F81B5174451FA001A792A /* VWWViewController.m in Sources */,
+				C62F81DE1744521B001A792A /* VWWScanner.m in Sources */,
+				C62F81DF1744521B001A792A /* VWWScannerDot.m in Sources */,
+				C62F81E01744521B001A792A /* VWWScannerLine.m in Sources */,
+				C62F81E11744521B001A792A /* VWWScannerTarget.m in Sources */,
+				C62F81E21744521B001A792A /* VWWScannerVector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
