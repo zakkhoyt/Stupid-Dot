@@ -1,23 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="4">
             <objects>
                 <viewController id="2" customClass="VWWViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KQo-vW-Ro1"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsc-VC-trP">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="UXO-Dp-d8C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Load Image">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadImageTouchUpInside:" destination="2" eventType="touchUpInside" id="gmN-wy-iOm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uF9-6X-08L">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="fWI-QQ-HSP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Dot">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hsc-VC-trP" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="03q-IT-c6U"/>
+                            <constraint firstItem="Hsc-VC-trP" firstAttribute="baseline" secondItem="uF9-6X-08L" secondAttribute="baseline" type="user" id="6Ks-Oc-8ap"/>
+                            <constraint firstItem="uF9-6X-08L" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="user" id="8rf-OX-uHm"/>
+                            <constraint firstItem="uF9-6X-08L" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="user" id="9qe-TD-sr1"/>
+                            <constraint firstItem="uF9-6X-08L" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="user" id="Ah9-Ad-IVu"/>
+                            <constraint firstItem="KQo-vW-Ro1" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="Bc3-QK-liv"/>
+                            <constraint firstItem="uF9-6X-08L" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="user" id="E1V-ZJ-N7j"/>
+                            <constraint firstItem="KQo-vW-Ro1" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="RkE-PJ-iFl"/>
+                            <constraint firstItem="KQo-vW-Ro1" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="Sgt-fv-QIa"/>
+                            <constraint firstItem="Hsc-VC-trP" firstAttribute="top" secondItem="KQo-vW-Ro1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bIB-Cn-ODF"/>
+                            <constraint firstItem="Hsc-VC-trP" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="user" id="csE-ZZ-Euo"/>
+                            <constraint firstItem="Hsc-VC-trP" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="user" id="yns-Ho-ljG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="KQo-vW-Ro1" id="elA-6I-7BJ"/>
+                        <outlet property="loadImageButton" destination="Hsc-VC-trP" id="3vy-OD-cOo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="475" y="132"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="VWWViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loadImageTouchUpInside:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loadImageButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

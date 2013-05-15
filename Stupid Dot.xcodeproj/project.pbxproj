@@ -29,6 +29,11 @@
 		C62F81E01744521B001A792A /* VWWScannerLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81D91744521B001A792A /* VWWScannerLine.m */; };
 		C62F81E11744521B001A792A /* VWWScannerTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81DB1744521B001A792A /* VWWScannerTarget.m */; };
 		C62F81E21744521B001A792A /* VWWScannerVector.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81DD1744521B001A792A /* VWWScannerVector.m */; };
+		C62F81E517445453001A792A /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = C62F81E417445453001A792A /* white.png */; };
+		C62F81EA1744556D001A792A /* maze_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C62F81E61744556D001A792A /* maze_01.jpg */; };
+		C62F81EB1744556D001A792A /* maze_02.png in Resources */ = {isa = PBXBuildFile; fileRef = C62F81E71744556D001A792A /* maze_02.png */; };
+		C62F81EC1744556D001A792A /* maze_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C62F81E81744556D001A792A /* maze_03.jpg */; };
+		C62F81ED1744556D001A792A /* maze_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C62F81E91744556D001A792A /* maze_04.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		C62F81DB1744521B001A792A /* VWWScannerTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerTarget.m; sourceTree = "<group>"; };
 		C62F81DC1744521B001A792A /* VWWScannerVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScannerVector.h; sourceTree = "<group>"; };
 		C62F81DD1744521B001A792A /* VWWScannerVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerVector.m; sourceTree = "<group>"; };
+		C62F81E417445453001A792A /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		C62F81E61744556D001A792A /* maze_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_01.jpg; sourceTree = "<group>"; };
+		C62F81E71744556D001A792A /* maze_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maze_02.png; sourceTree = "<group>"; };
+		C62F81E81744556D001A792A /* maze_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_03.jpg; sourceTree = "<group>"; };
+		C62F81E91744556D001A792A /* maze_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_04.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +144,7 @@
 		C62F819B174451F9001A792A /* Stupid Dot */ = {
 			isa = PBXGroup;
 			children = (
+				C62F81E317445453001A792A /* images */,
 				C62F81D31744521B001A792A /* Scanner */,
 				C62F81A4174451F9001A792A /* VWWAppDelegate.h */,
 				C62F81A5174451FA001A792A /* VWWAppDelegate.m */,
@@ -194,6 +205,18 @@
 				C62F81DD1744521B001A792A /* VWWScannerVector.m */,
 			);
 			path = Scanner;
+			sourceTree = "<group>";
+		};
+		C62F81E317445453001A792A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C62F81E61744556D001A792A /* maze_01.jpg */,
+				C62F81E71744556D001A792A /* maze_02.png */,
+				C62F81E81744556D001A792A /* maze_03.jpg */,
+				C62F81E91744556D001A792A /* maze_04.jpg */,
+				C62F81E417445453001A792A /* white.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +297,11 @@
 				C62F81AC174451FA001A792A /* Default-568h@2x.png in Resources */,
 				C62F81AF174451FA001A792A /* MainStoryboard_iPhone.storyboard in Resources */,
 				C62F81B2174451FA001A792A /* MainStoryboard_iPad.storyboard in Resources */,
+				C62F81E517445453001A792A /* white.png in Resources */,
+				C62F81EA1744556D001A792A /* maze_01.jpg in Resources */,
+				C62F81EB1744556D001A792A /* maze_02.png in Resources */,
+				C62F81EC1744556D001A792A /* maze_03.jpg in Resources */,
+				C62F81ED1744556D001A792A /* maze_04.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
