@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C62F8196174451F9001A792A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8195174451F9001A792A /* UIKit.framework */; };
+		C62F8198174451F9001A792A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8197174451F9001A792A /* Foundation.framework */; };
+		C62F819A174451F9001A792A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8199174451F9001A792A /* CoreGraphics.framework */; };
+		C62F81A0174451F9001A792A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C62F819E174451F9001A792A /* InfoPlist.strings */; };
+		C62F81A2174451F9001A792A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81A1174451F9001A792A /* main.m */; };
+		C62F81A6174451FA001A792A /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81A5174451FA001A792A /* VWWAppDelegate.m */; };
+		C62F81A8174451FA001A792A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C62F81A7174451FA001A792A /* Default.png */; };
+		C62F81AA174451FA001A792A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C62F81A9174451FA001A792A /* Default@2x.png */; };
+		C62F81AC174451FA001A792A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C62F81AB174451FA001A792A /* Default-568h@2x.png */; };
+		C62F81AF174451FA001A792A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62F81AD174451FA001A792A /* MainStoryboard_iPhone.storyboard */; };
+		C62F81B2174451FA001A792A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62F81B0174451FA001A792A /* MainStoryboard_iPad.storyboard */; };
+		C62F81B5174451FA001A792A /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81B4174451FA001A792A /* VWWViewController.m */; };
+		C62F81BD174451FA001A792A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F81BC174451FA001A792A /* SenTestingKit.framework */; };
+		C62F81BE174451FA001A792A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8195174451F9001A792A /* UIKit.framework */; };
+		C62F81BF174451FA001A792A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8197174451F9001A792A /* Foundation.framework */; };
+		C62F81C7174451FA001A792A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C62F81C5174451FA001A792A /* InfoPlist.strings */; };
+		C62F81CA174451FA001A792A /* Stupid_DotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F81C9174451FA001A792A /* Stupid_DotTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C62F81C0174451FA001A792A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C62F818A174451F9001A792A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C62F8191174451F9001A792A;
+			remoteInfo = "Stupid Dot";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C62F8192174451F9001A792A /* Stupid Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stupid Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62F8195174451F9001A792A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C62F8197174451F9001A792A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C62F8199174451F9001A792A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C62F819D174451F9001A792A /* Stupid Dot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Stupid Dot-Info.plist"; sourceTree = "<group>"; };
+		C62F819F174451F9001A792A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C62F81A1174451F9001A792A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C62F81A3174451F9001A792A /* Stupid Dot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stupid Dot-Prefix.pch"; sourceTree = "<group>"; };
+		C62F81A4174451F9001A792A /* VWWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWAppDelegate.h; sourceTree = "<group>"; };
+		C62F81A5174451FA001A792A /* VWWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
+		C62F81A7174451FA001A792A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C62F81A9174451FA001A792A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C62F81AB174451FA001A792A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C62F81AE174451FA001A792A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C62F81B1174451FA001A792A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		C62F81B3174451FA001A792A /* VWWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWViewController.h; sourceTree = "<group>"; };
+		C62F81B4174451FA001A792A /* VWWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
+		C62F81BB174451FA001A792A /* Stupid DotTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stupid DotTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62F81BC174451FA001A792A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C62F81C4174451FA001A792A /* Stupid DotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Stupid DotTests-Info.plist"; sourceTree = "<group>"; };
+		C62F81C6174451FA001A792A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C62F81C8174451FA001A792A /* Stupid_DotTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stupid_DotTests.h; sourceTree = "<group>"; };
+		C62F81C9174451FA001A792A /* Stupid_DotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stupid_DotTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C62F818F174451F9001A792A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62F8196174451F9001A792A /* UIKit.framework in Frameworks */,
+				C62F8198174451F9001A792A /* Foundation.framework in Frameworks */,
+				C62F819A174451F9001A792A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62F81B7174451FA001A792A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62F81BD174451FA001A792A /* SenTestingKit.framework in Frameworks */,
+				C62F81BE174451FA001A792A /* UIKit.framework in Frameworks */,
+				C62F81BF174451FA001A792A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C62F8189174451F9001A792A = {
+			isa = PBXGroup;
+			children = (
+				C62F819B174451F9001A792A /* Stupid Dot */,
+				C62F81C2174451FA001A792A /* Stupid DotTests */,
+				C62F8194174451F9001A792A /* Frameworks */,
+				C62F8193174451F9001A792A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C62F8193174451F9001A792A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C62F8192174451F9001A792A /* Stupid Dot.app */,
+				C62F81BB174451FA001A792A /* Stupid DotTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C62F8194174451F9001A792A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C62F8195174451F9001A792A /* UIKit.framework */,
+				C62F8197174451F9001A792A /* Foundation.framework */,
+				C62F8199174451F9001A792A /* CoreGraphics.framework */,
+				C62F81BC174451FA001A792A /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C62F819B174451F9001A792A /* Stupid Dot */ = {
+			isa = PBXGroup;
+			children = (
+				C62F81A4174451F9001A792A /* VWWAppDelegate.h */,
+				C62F81A5174451FA001A792A /* VWWAppDelegate.m */,
+				C62F81AD174451FA001A792A /* MainStoryboard_iPhone.storyboard */,
+				C62F81B0174451FA001A792A /* MainStoryboard_iPad.storyboard */,
+				C62F81B3174451FA001A792A /* VWWViewController.h */,
+				C62F81B4174451FA001A792A /* VWWViewController.m */,
+				C62F819C174451F9001A792A /* Supporting Files */,
+			);
+			path = "Stupid Dot";
+			sourceTree = "<group>";
+		};
+		C62F819C174451F9001A792A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C62F819D174451F9001A792A /* Stupid Dot-Info.plist */,
+				C62F819E174451F9001A792A /* InfoPlist.strings */,
+				C62F81A1174451F9001A792A /* main.m */,
+				C62F81A3174451F9001A792A /* Stupid Dot-Prefix.pch */,
+				C62F81A7174451FA001A792A /* Default.png */,
+				C62F81A9174451FA001A792A /* Default@2x.png */,
+				C62F81AB174451FA001A792A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C62F81C2174451FA001A792A /* Stupid DotTests */ = {
+			isa = PBXGroup;
+			children = (
+				C62F81C8174451FA001A792A /* Stupid_DotTests.h */,
+				C62F81C9174451FA001A792A /* Stupid_DotTests.m */,
+				C62F81C3174451FA001A792A /* Supporting Files */,
+			);
+			path = "Stupid DotTests";
+			sourceTree = "<group>";
+		};
+		C62F81C3174451FA001A792A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C62F81C4174451FA001A792A /* Stupid DotTests-Info.plist */,
+				C62F81C5174451FA001A792A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C62F8191174451F9001A792A /* Stupid Dot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C62F81CD174451FA001A792A /* Build configuration list for PBXNativeTarget "Stupid Dot" */;
+			buildPhases = (
+				C62F818E174451F9001A792A /* Sources */,
+				C62F818F174451F9001A792A /* Frameworks */,
+				C62F8190174451F9001A792A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stupid Dot";
+			productName = "Stupid Dot";
+			productReference = C62F8192174451F9001A792A /* Stupid Dot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C62F81BA174451FA001A792A /* Stupid DotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C62F81D0174451FA001A792A /* Build configuration list for PBXNativeTarget "Stupid DotTests" */;
+			buildPhases = (
+				C62F81B6174451FA001A792A /* Sources */,
+				C62F81B7174451FA001A792A /* Frameworks */,
+				C62F81B8174451FA001A792A /* Resources */,
+				C62F81B9174451FA001A792A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C62F81C1174451FA001A792A /* PBXTargetDependency */,
+			);
+			name = "Stupid DotTests";
+			productName = "Stupid DotTests";
+			productReference = C62F81BB174451FA001A792A /* Stupid DotTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C62F818A174451F9001A792A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VWW;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Zakk Hoyt";
+			};
+			buildConfigurationList = C62F818D174451F9001A792A /* Build configuration list for PBXProject "Stupid Dot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C62F8189174451F9001A792A;
+			productRefGroup = C62F8193174451F9001A792A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C62F8191174451F9001A792A /* Stupid Dot */,
+				C62F81BA174451FA001A792A /* Stupid DotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C62F8190174451F9001A792A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62F81A0174451F9001A792A /* InfoPlist.strings in Resources */,
+				C62F81A8174451FA001A792A /* Default.png in Resources */,
+				C62F81AA174451FA001A792A /* Default@2x.png in Resources */,
+				C62F81AC174451FA001A792A /* Default-568h@2x.png in Resources */,
+				C62F81AF174451FA001A792A /* MainStoryboard_iPhone.storyboard in Resources */,
+				C62F81B2174451FA001A792A /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62F81B8174451FA001A792A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62F81C7174451FA001A792A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C62F81B9174451FA001A792A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C62F818E174451F9001A792A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62F81A2174451F9001A792A /* main.m in Sources */,
+				C62F81A6174451FA001A792A /* VWWAppDelegate.m in Sources */,
+				C62F81B5174451FA001A792A /* VWWViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62F81B6174451FA001A792A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62F81CA174451FA001A792A /* Stupid_DotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C62F81C1174451FA001A792A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C62F8191174451F9001A792A /* Stupid Dot */;
+			targetProxy = C62F81C0174451FA001A792A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C62F819E174451F9001A792A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C62F819F174451F9001A792A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C62F81AD174451FA001A792A /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C62F81AE174451FA001A792A /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C62F81B0174451FA001A792A /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C62F81B1174451FA001A792A /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C62F81C5174451FA001A792A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C62F81C6174451FA001A792A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C62F81CB174451FA001A792A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C62F81CC174451FA001A792A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C62F81CE174451FA001A792A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
+				INFOPLIST_FILE = "Stupid Dot/Stupid Dot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C62F81CF174451FA001A792A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
+				INFOPLIST_FILE = "Stupid Dot/Stupid Dot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C62F81D1174451FA001A792A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Stupid Dot.app/Stupid Dot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
+				INFOPLIST_FILE = "Stupid DotTests/Stupid DotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C62F81D2174451FA001A792A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Stupid Dot.app/Stupid Dot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
+				INFOPLIST_FILE = "Stupid DotTests/Stupid DotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C62F818D174451F9001A792A /* Build configuration list for PBXProject "Stupid Dot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C62F81CB174451FA001A792A /* Debug */,
+				C62F81CC174451FA001A792A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C62F81CD174451FA001A792A /* Build configuration list for PBXNativeTarget "Stupid Dot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C62F81CE174451FA001A792A /* Debug */,
+				C62F81CF174451FA001A792A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C62F81D0174451FA001A792A /* Build configuration list for PBXNativeTarget "Stupid DotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C62F81D1174451FA001A792A /* Debug */,
+				C62F81D2174451FA001A792A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C62F818A174451F9001A792A /* Project object */;
+}
