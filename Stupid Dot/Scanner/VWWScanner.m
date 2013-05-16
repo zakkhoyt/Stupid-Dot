@@ -1,47 +1,78 @@
 //
 //  VWWScanner.m
-//  EZScanner
+//  Stupid Dot
 //
 //  Created by Zakk Hoyt on 5/15/13.
 //  Copyright (c) 2013 Zakk Hoyt. All rights reserved.
 //
 
 #import "VWWScanner.h"
+#import "VWWScannerVector.h"
+#import "VWWScannerDot.h"
+#import "VWWScannerLine.h"
 
 @interface VWWScanner ()
-
+@property (nonatomic, strong) VWWScannerDot *dot;
+@property (nonatomic, strong) VWWScannerVector *vector;
+@property (nonatomic, strong) VWWScannerLine *progress;
+@property (nonatomic, strong) VWWScannerLine *deflection;
 @end
 
 @implementation VWWScanner
 
 -(id)init{
+    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
-        
+        [self initializeInstanceVariables];
     }
     return self;
 }
 
-#pragma mark Private methods
+-(id)initWithPoint:(CGPoint)point{
+    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+    self = [super init];
+    if(self){
+        [self initializeInstanceVariables];
+        _dot.dotPoint = point;
+    }
+    return self;
+}
 
--(void)asdfsad{
-    //    CGPoint p1 = CGPointMake(1, 25);
-    //    CGPoint p2 = CGPointMake(5, 0);
-    //    CGPoint p1 = CGPointMake(0, 5);
-    //    CGPoint p2 = CGPointMake(12, 24);
-    CGPoint p1 = CGPointMake(1, 1);
-    CGPoint p2 = CGPointMake(3, 25);
-    
-    
-    NSInteger rise = p2.x - p1.x;
-    NSInteger run = -(p2.y - p1.y);
-    float theta = atan2f(rise, run);
-    float angleDegrees = theta * 180 / M_PI;
-    NSLog(@"%f radians = %f degrees", theta, angleDegrees);
+
+-(void)initializeInstanceVariables{
+    _dot = [[VWWScannerDot alloc]init];
+    _vector = [[VWWScannerVector alloc]init];
+    _progress = [[VWWScannerLine alloc]init];
+    _deflection = [[VWWScannerLine alloc]init];
+    _borderType = VWWScannerBorderTypeBlack;
+    _borderThreshold = 0.5;
+}
+
+-(NSString*)description{
+    return [NSString stringWithFormat:@"dot=%@\n"
+            "vector=%@\n"
+            "progress=%@\n"
+            "deflection=%@\n",
+            self.dot.description,
+            self.vector.description,
+            self.progress.description,
+            self.deflection.description];
+}
+
+
+#pragma mark Private methods
+-(void)updateVector{
+
     
 }
 
 
 
+
 #pragma mark Public methods
+-(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval{
+    [self.vector updateAngleWithBeginPoint:beginPoint endPoint:endPoint];
+    // TODO: calculate speed and set it on the vector here
+}
 @end

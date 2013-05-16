@@ -1,15 +1,12 @@
 //
 //  VWWScanner.h
-//  EZScanner
+//  Stupid Dot
 //
 //  Created by Zakk Hoyt on 5/15/13.
 //  Copyright (c) 2013 Zakk Hoyt. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "VWWScannerVector.h"
-#import "VWWScannerDot.h"
-#import "VWWScannerLine.h"
 
 
 typedef enum{
@@ -20,10 +17,8 @@ typedef enum{
 } VWWScannerBorderType;
 
 @interface VWWScanner : NSObject
-@property (nonatomic, strong) VWWScannerDot *dot;
-@property (nonatomic, strong) VWWScannerVector *vector;
-@property (nonatomic, strong) VWWScannerLine *progress;
-@property (nonatomic, strong) VWWScannerLine *deflection;
 @property (nonatomic) VWWScannerBorderType *borderType;
 @property (nonatomic) float borderThreshold;
+-(id)initWithPoint:(CGPoint)point;
+-(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval;
 @end
