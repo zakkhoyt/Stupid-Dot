@@ -28,7 +28,17 @@
 {
     [super viewDidLoad];
     self.contentSizeForViewInPopover = CGSizeMake(200, 400);
-    _imageNames = [@[@"white.jpg", @"maze_01.jpg", @"maze_02.jpg", @"maze_03.jpg", @"maze_04.jpg"]mutableCopy];
+    _imageNames = [@[@"white.jpg",
+                   @"maze_01.jpg",
+                   @"maze_02.jpg",
+                   @"maze_03.jpg",
+                   @"maze_04.jpg",
+                   @"maze_05.jpg",
+                   @"maze_06.jpg",
+                   @"maze_07.jpg",
+                   @"maze_08.jpg",
+                   @"maze_09.jpg"]
+                   mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning

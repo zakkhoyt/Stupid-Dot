@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C603B6721744943700585877 /* VWWScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C603B6711744943700585877 /* VWWScannerView.m */; };
+		C603B67A1744D39A00585877 /* maze_05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C603B6731744D39A00585877 /* maze_05.jpg */; };
+		C603B67B1744D39A00585877 /* maze_06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C603B6741744D39A00585877 /* maze_06.jpg */; };
+		C603B67C1744D39A00585877 /* maze_07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C603B6751744D39A00585877 /* maze_07.jpg */; };
+		C603B67D1744D39A00585877 /* maze_08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C603B6761744D39A00585877 /* maze_08.jpg */; };
+		C603B67E1744D39A00585877 /* maze_09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C603B6771744D39A00585877 /* maze_09.jpg */; };
+		C603B67F1744D39A00585877 /* maze_10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C603B6781744D39A00585877 /* maze_10.jpg */; };
+		C603B6801744D39A00585877 /* maze_11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C603B6791744D39A00585877 /* maze_11.jpg */; };
 		C62F8196174451F9001A792A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8195174451F9001A792A /* UIKit.framework */; };
 		C62F8198174451F9001A792A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8197174451F9001A792A /* Foundation.framework */; };
 		C62F819A174451F9001A792A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8199174451F9001A792A /* CoreGraphics.framework */; };
@@ -52,6 +59,13 @@
 /* Begin PBXFileReference section */
 		C603B6701744943700585877 /* VWWScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWScannerView.h; path = view/VWWScannerView.h; sourceTree = "<group>"; };
 		C603B6711744943700585877 /* VWWScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWScannerView.m; path = view/VWWScannerView.m; sourceTree = "<group>"; };
+		C603B6731744D39A00585877 /* maze_05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_05.jpg; sourceTree = "<group>"; };
+		C603B6741744D39A00585877 /* maze_06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_06.jpg; sourceTree = "<group>"; };
+		C603B6751744D39A00585877 /* maze_07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_07.jpg; sourceTree = "<group>"; };
+		C603B6761744D39A00585877 /* maze_08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_08.jpg; sourceTree = "<group>"; };
+		C603B6771744D39A00585877 /* maze_09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_09.jpg; sourceTree = "<group>"; };
+		C603B6781744D39A00585877 /* maze_10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_10.jpg; sourceTree = "<group>"; };
+		C603B6791744D39A00585877 /* maze_11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_11.jpg; sourceTree = "<group>"; };
 		C62F8192174451F9001A792A /* Stupid Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stupid Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62F8195174451F9001A792A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C62F8197174451F9001A792A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -219,11 +233,18 @@
 		C62F81E317445453001A792A /* images */ = {
 			isa = PBXGroup;
 			children = (
-				C62F81EF17445753001A792A /* white.jpg */,
+				C603B6731744D39A00585877 /* maze_05.jpg */,
+				C603B6741744D39A00585877 /* maze_06.jpg */,
+				C603B6751744D39A00585877 /* maze_07.jpg */,
+				C603B6761744D39A00585877 /* maze_08.jpg */,
+				C603B6771744D39A00585877 /* maze_09.jpg */,
+				C603B6781744D39A00585877 /* maze_10.jpg */,
+				C603B6791744D39A00585877 /* maze_11.jpg */,
 				C62F81E61744556D001A792A /* maze_01.jpg */,
 				C62F81EE17445753001A792A /* maze_02.jpg */,
 				C62F81E81744556D001A792A /* maze_03.jpg */,
 				C62F81E91744556D001A792A /* maze_04.jpg */,
+				C62F81EF17445753001A792A /* white.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -342,6 +363,13 @@
 				C62F81ED1744556D001A792A /* maze_04.jpg in Resources */,
 				C62F81F017445753001A792A /* maze_02.jpg in Resources */,
 				C62F81F117445753001A792A /* white.jpg in Resources */,
+				C603B67A1744D39A00585877 /* maze_05.jpg in Resources */,
+				C603B67B1744D39A00585877 /* maze_06.jpg in Resources */,
+				C603B67C1744D39A00585877 /* maze_07.jpg in Resources */,
+				C603B67D1744D39A00585877 /* maze_08.jpg in Resources */,
+				C603B67E1744D39A00585877 /* maze_09.jpg in Resources */,
+				C603B67F1744D39A00585877 /* maze_10.jpg in Resources */,
+				C603B6801744D39A00585877 /* maze_11.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

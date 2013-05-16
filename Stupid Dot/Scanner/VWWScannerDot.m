@@ -14,9 +14,9 @@
     self = [super init];
     if(self){
         _dotPoint = CGPointMake(0, 0);
-        _dotRadius = 5.0;
-        _dotFillColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-        _dotBorderColor = [UIColor redColor];
+        _dotRadius = 8.0;
+        _dotFillColor = [UIColor redColor];
+        _dotBorderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     }
     return self;
 }
