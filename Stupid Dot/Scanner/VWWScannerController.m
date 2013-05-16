@@ -10,6 +10,10 @@
 
 @interface VWWScannerController ()
 @property (nonatomic, strong) NSMutableArray *scanners;
+@property (nonatomic) dispatch_queue_t scannerQueue;
+@property (nonatomic, strong) NSTimer *timer;
+//@property (nonatomic, strong) NSArray *pixelBuffer;
+@property (nonatomic, strong) UIImage *image;
 @end
 
 @implementation VWWScannerController
@@ -27,6 +31,7 @@
     self = [super init];
     if(self){
         _scanners = [@[]mutableCopy];
+        _scannerQueue = dispatch_queue_create("com.vaporwarewolf.stupiddot.scanner", NULL);
     }
     return self;
 }
@@ -39,61 +44,66 @@
 #pragma mark Private methods
 
 
-+ (NSArray*)getRGBAsFromImage:(UIImage*)image atX:(int)xx andY:(int)yy count:(int)count
-{
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:count];
-    
-    // First get the image into your data buffer
-    CGImageRef imageRef = [image CGImage];
-    NSUInteger width = CGImageGetWidth(imageRef);
-    NSUInteger height = CGImageGetHeight(imageRef);
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    unsigned char *rawData = (unsigned char*) calloc(height * width * 4, sizeof(unsigned char));
-    NSUInteger bytesPerPixel = 4;
-    NSUInteger bytesPerRow = bytesPerPixel * width;
-    NSUInteger bitsPerComponent = 8;
-    CGContextRef context = CGBitmapContextCreate(rawData, width, height,
-                                                 bitsPerComponent, bytesPerRow, colorSpace,
-                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
-    CGColorSpaceRelease(colorSpace);
-    
-    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
-    CGContextRelease(context);
-    
-    // Now your rawData contains the image data in the RGBA8888 pixel format.
-    int byteIndex = (bytesPerRow * yy) + xx * bytesPerPixel;
-    for (int ii = 0 ; ii < count ; ++ii)
-    {
-        CGFloat red   = (rawData[byteIndex]     * 1.0) / 255.0;
-        CGFloat green = (rawData[byteIndex + 1] * 1.0) / 255.0;
-        CGFloat blue  = (rawData[byteIndex + 2] * 1.0) / 255.0;
-        CGFloat alpha = (rawData[byteIndex + 3] * 1.0) / 255.0;
-        byteIndex += 4;
+
+
+
+
+- (void)processScanners {
+    dispatch_async(self.scannerQueue, ^{
+        for(NSInteger index = 0; index < self.scanners.count; index++){
+            VWWScanner *scanner = self.scanners[index];
+            scanner.image = self.image;
+            [scanner process];
+        }
         
-        UIColor *acolor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-        [result addObject:acolor];
-    }
-    
-    free(rawData);
-    
-    return result;
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.renderScannersBlock(self.scanners);
+        });
+    });
 }
+
+
+
 
 
 
 #pragma mark Public methods
 
 -(void)setImage:(UIImage*)image{
-    
+    _image = image;
 }
 
 -(void)addScanner:(VWWScanner*)scanner{
-    
+    [self.scanners addObject:scanner];
 }
 
 -(void)removeScanner:(VWWScanner*)scanner{
-    
+    [self.scanners removeObject:scanner];
 }
+-(void)removeAllScanners{
+    [self stopProcessing];
+    [self stopAllScanners];
+    [self.scanners removeAllObjects];
+}
+
+
+-(void)startProcessing{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1/(float)60.0 target:self selector:@selector(processScanners) userInfo:nil repeats:YES];
+}
+-(void)stopProcessing{
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+
+-(void)startAllScanners{
+    [self.scanners makeObjectsPerformSelector:@selector(start)];
+}
+-(void)stopAllScanners{
+    [self.scanners makeObjectsPerformSelector:@selector(stop)];
+}
+
+
 
 
 @end

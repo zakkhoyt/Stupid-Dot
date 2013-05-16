@@ -9,7 +9,7 @@
 #import "VWWViewController.h"
 #import "VWWImagePopoverViewController.h"
 #import "VWWScannerController.h"
-#import "VWWScannerImageView.h"
+#import "VWWImageView.h"
 
 
 static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
@@ -18,7 +18,7 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
 @interface VWWViewController ()
 // GUI stuff
 @property (weak, nonatomic) IBOutlet UIButton *loadImageButton;
-@property (weak, nonatomic) IBOutlet VWWScannerImageView *scannerImageView;
+@property (weak, nonatomic) IBOutlet VWWImageView *scannerImageView;
 @property (nonatomic, strong) UIPopoverController *popoverViewController;
 
 // Other stuff
@@ -34,6 +34,14 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
 {
     [super viewDidLoad];
     _scannerController = [[VWWScannerController alloc]init];
+    
+    _scannerController.renderScannersBlock = ^(NSArray *scanners){
+        // TODO: This is an array of VWWScanner objects. Use them to render the dots either on the VWWImageView, or another layer;
+        
+    };
+    
+    [_scannerController startProcessing];
+    
 	_scannerImageView.generateDotBlock = ^(CGPoint touchPoint){
         // Draw dot to signal something is happening
         // Generate a new scanner and add it to the controller
@@ -41,9 +49,14 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
         [self.scannerController addScanner:self.tempScanner];
     };
     
+    _scannerImageView.generateDotPreviewBlock = ^(CGPoint touchPoint){
+        // Draw a preview line from the begin point to this point
+    };
+    
     _scannerImageView.generateVectorBlock = ^(CGPoint touchBegin, CGPoint touchEnd, NSTimeInterval timeInterval){
         // Update more properties of self.tempscanner and start it
         [self.tempScanner setBeginPoint:touchBegin endPoint:touchEnd timeInterval:timeInterval];
+        [self.tempScanner start];
     };
          
 }
@@ -62,19 +75,24 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
     if([segue.identifier isEqualToString:kSegueMainToImagePopover]){
         VWWImagePopoverViewController *vc = segue.destinationViewController;
         vc.completion = ^(NSString *imageName){
-            [self.scannerImageView setImage:[UIImage imageNamed:imageName]];
+            UIImage *image = [UIImage imageNamed:imageName];
+            [self.scannerImageView setImage:image];
+            [self.scannerController setImage:image];
             [self.popoverViewController dismissPopoverAnimated:YES];
         };
     }
 }
 
 #pragma mark IBActions
-- (IBAction)loadImageTouchUpInside:(id)sender {
+
+- (IBAction)loadImageButtonTouchUpInside:(id)sender {
     [self performSegueWithIdentifier:kSegueMainToImagePopover sender:self];
 }
 
 
-
+- (IBAction)removeAllButtonTouchUpInside:(id)sender {
+    [self.scannerController removeAllScanners];
+}
 
 
 

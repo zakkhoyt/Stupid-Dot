@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C603B6721744943700585877 /* VWWScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C603B6711744943700585877 /* VWWScannerView.m */; };
 		C62F8196174451F9001A792A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8195174451F9001A792A /* UIKit.framework */; };
 		C62F8198174451F9001A792A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8197174451F9001A792A /* Foundation.framework */; };
 		C62F819A174451F9001A792A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F8199174451F9001A792A /* CoreGraphics.framework */; };
@@ -35,7 +36,7 @@
 		C62F81F117445753001A792A /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C62F81EF17445753001A792A /* white.jpg */; };
 		C64DC6CD17446BD9002CEE67 /* VWWImagePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */; };
 		C64DC6CE17446BD9002CEE67 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CC17446BD9002CEE67 /* VWWViewController.m */; };
-		C64DC6D117446EAB002CEE67 /* VWWScannerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6D017446EAB002CEE67 /* VWWScannerImageView.m */; };
+		C64DC6D117446EAB002CEE67 /* VWWImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6D017446EAB002CEE67 /* VWWImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C603B6701744943700585877 /* VWWScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWScannerView.h; path = view/VWWScannerView.h; sourceTree = "<group>"; };
+		C603B6711744943700585877 /* VWWScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWScannerView.m; path = view/VWWScannerView.m; sourceTree = "<group>"; };
 		C62F8192174451F9001A792A /* Stupid Dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stupid Dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62F8195174451F9001A792A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C62F8197174451F9001A792A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,8 +92,8 @@
 		C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWImagePopoverViewController.m; sourceTree = "<group>"; };
 		C64DC6CB17446BD9002CEE67 /* VWWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWViewController.h; sourceTree = "<group>"; };
 		C64DC6CC17446BD9002CEE67 /* VWWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
-		C64DC6CF17446EAB002CEE67 /* VWWScannerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWScannerImageView.h; path = view/VWWScannerImageView.h; sourceTree = "<group>"; };
-		C64DC6D017446EAB002CEE67 /* VWWScannerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWScannerImageView.m; path = view/VWWScannerImageView.m; sourceTree = "<group>"; };
+		C64DC6CF17446EAB002CEE67 /* VWWImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWImageView.h; path = view/VWWImageView.h; sourceTree = "<group>"; };
+		C64DC6D017446EAB002CEE67 /* VWWImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWImageView.m; path = view/VWWImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,8 +242,10 @@
 		C64DC6D217446EB2002CEE67 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				C64DC6CF17446EAB002CEE67 /* VWWScannerImageView.h */,
-				C64DC6D017446EAB002CEE67 /* VWWScannerImageView.m */,
+				C64DC6CF17446EAB002CEE67 /* VWWImageView.h */,
+				C64DC6D017446EAB002CEE67 /* VWWImageView.m */,
+				C603B6701744943700585877 /* VWWScannerView.h */,
+				C603B6711744943700585877 /* VWWScannerView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -380,7 +385,8 @@
 				C62F81E21744521B001A792A /* VWWScannerVector.m in Sources */,
 				C64DC6CD17446BD9002CEE67 /* VWWImagePopoverViewController.m in Sources */,
 				C64DC6CE17446BD9002CEE67 /* VWWViewController.m in Sources */,
-				C64DC6D117446EAB002CEE67 /* VWWScannerImageView.m in Sources */,
+				C64DC6D117446EAB002CEE67 /* VWWImageView.m in Sources */,
+				C603B6721744943700585877 /* VWWScannerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
