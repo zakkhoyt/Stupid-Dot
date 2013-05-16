@@ -7,11 +7,15 @@
 //
 
 #import "VWWViewController.h"
+#import "VWWImagePopoverViewController.h"
 
 @interface VWWViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loadImageButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIPopoverController *popoverViewController;
 @end
+
+static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
 
 @implementation VWWViewController
 
@@ -27,13 +31,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue isKindOfClass:[UIStoryboardPopoverSegue class]]){
+        self.popoverViewController = ((UIStoryboardPopoverSegue*)segue).popoverController;
+    }
+    
+    if([segue.identifier isEqualToString:kSegueMainToImagePopover]){
+        VWWImagePopoverViewController *vc = segue.destinationViewController;
+        vc.completion = ^(NSString *imageName){
+            [self.imageView setImage:[UIImage imageNamed:imageName]];
+            [self.popoverViewController dismissPopoverAnimated:YES];
+        };
+    }
+}
+
 #pragma mark IBActions
 - (IBAction)loadImageTouchUpInside:(id)sender {
-//    [self.imageView setImage:[UIImage imageNamed:@"white.jpg"]];
-    [self.imageView setImage:[UIImage imageNamed:@"maze_01.jpg"]];
-//    [self.imageView setImage:[UIImage imageNamed:@"maze_02.jpg"]];
-//    [self.imageView setImage:[UIImage imageNamed:@"maze_03.jpg"]];
-//    [self.imageView setImage:[UIImage imageNamed:@"maze_04.jpg"]];
+    [self performSegueWithIdentifier:kSegueMainToImagePopover sender:self];
 }
 
 
