@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWWScanner.h"
 
 @interface VWWScannerView : UIView
-
+-(void)renderScanners:(NSArray*)scanners;
 @end

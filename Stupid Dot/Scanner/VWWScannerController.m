@@ -77,13 +77,21 @@
     [self.scanners addObject:scanner];
 }
 
+-(void)printScanners{
+    for(VWWScanner *scanner in self.scanners){
+        NSLog(@"%@", scanner.description);
+    }
+}
+
+
 -(void)removeScanner:(VWWScanner*)scanner{
     [self.scanners removeObject:scanner];
 }
 -(void)removeAllScanners{
-    [self stopProcessing];
-    [self stopAllScanners];
+//    [self stopProcessing];
+//    [self stopAllScanners];
     [self.scanners removeAllObjects];
+    self.renderScannersBlock(self.scanners);
 }
 
 

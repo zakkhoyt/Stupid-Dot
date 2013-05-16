@@ -11,5 +11,6 @@
 @interface VWWScannerDot : NSObject
 @property (nonatomic) CGPoint dotPoint;
 @property (nonatomic) CGFloat dotRadius;
-@property (nonatomic, strong) UIColor *dotColor;
+@property (nonatomic, strong) UIColor *dotFillColor;
+@property (nonatomic, strong) UIColor *dotBorderColor;
 @end

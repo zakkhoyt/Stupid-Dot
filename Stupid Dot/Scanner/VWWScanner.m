@@ -8,11 +8,11 @@
 
 #import "VWWScanner.h"
 #import "VWWScannerVector.h"
-#import "VWWScannerDot.h"
+
 #import "VWWScannerLine.h"
 
 @interface VWWScanner ()
-@property (nonatomic, strong) VWWScannerDot *dot;
+
 @property (nonatomic, strong) VWWScannerVector *vector;
 @property (nonatomic, strong) VWWScannerLine *progress;
 @property (nonatomic, strong) VWWScannerLine *deflection;
@@ -50,6 +50,7 @@
     _vector = [[VWWScannerVector alloc]init];
     _progress = [[VWWScannerLine alloc]init];
     _deflection = [[VWWScannerLine alloc]init];
+    _deflection.lineColor = [UIColor orangeColor];
     _borderType = VWWScannerBorderTypeBlack;
     _borderThreshold = 0.5;
     _renderProgressLine = YES;
@@ -58,10 +59,11 @@
 }
 
 -(NSString*)description{
-    return [NSString stringWithFormat:@"dot=%@\n"
-            "vector=%@\n"
-            "progress=%@\n"
-            "deflection=%@\n",
+    return [NSString stringWithFormat:@"\n*********************SCANNER*********************:\n"
+            "dot:\n%@"
+            "vector:\n%@"
+            "progress:\n%@"
+            "deflection:\n%@",
             self.dot.description,
             self.vector.description,
             self.progress.description,
@@ -133,6 +135,7 @@
 -(void)start{
     NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self.running = YES;
+    
 }
 
 -(void)stop{
@@ -143,11 +146,11 @@
 -(void)process{
     
     if(!self.running){
-        NSLog(@"%s:%d %p Scanner is not running. Returning early.", __FUNCTION__, __LINE__, self);
+//        NSLog(@"%s:%d %p Scanner is not running. Returning early.", __FUNCTION__, __LINE__, self);
         return;
     }
     
-    NSLog(@"%s:%d %p", __FUNCTION__, __LINE__, self);
+//    NSLog(@"%s:%d %p", __FUNCTION__, __LINE__, self);
     
     
     

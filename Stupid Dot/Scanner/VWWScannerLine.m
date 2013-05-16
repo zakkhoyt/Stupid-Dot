@@ -22,10 +22,10 @@
 }
 
 -(NSString*)description{
-    return [NSString stringWithFormat:@"lineBegin=%@\n"
-            "lineEnd=%@\n"
-            "lineRadius=%f\n"
-            "lineColor=%@",
+    return [NSString stringWithFormat:@"\tlineBegin=%@\n"
+            "\tlineEnd=%@\n"
+            "\tlineRadius=%f\n"
+            "\tlineColor=%@\n",
             NSStringFromCGPoint(self.lineBegin),
             NSStringFromCGPoint(self.lineEnd),
             self.lineRadius,

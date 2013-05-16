@@ -21,8 +21,8 @@
 }
 
 -(NSString*)description{
-    return [NSString stringWithFormat:@"angle=%f\n"
-            "speed=%f\n",
+    return [NSString stringWithFormat:@"\tangle=%f\n"
+            "\tspeed=%f\n",
             self.angle,
             self.speed];
 }
@@ -40,7 +40,7 @@
         angleInRadians += 2*M_PI;
     }
     float angleInDegrees = angleInRadians * 180 / M_PI;
-
+    self.angle = angleInDegrees;
     NSLog(@"Updated vector angle: %fr %fd", angleInRadians, angleInDegrees);
 }
 @end

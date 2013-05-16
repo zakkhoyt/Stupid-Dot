@@ -15,18 +15,21 @@
     if(self){
         _dotPoint = CGPointMake(0, 0);
         _dotRadius = 5.0;
-        _dotColor = [UIColor redColor];
+        _dotFillColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+        _dotBorderColor = [UIColor redColor];
     }
     return self;
 }
 
 -(NSString*)description{
-    return [NSString stringWithFormat:@"dotPoint=%@\n"
-            "dotRadius=%f\n"
-            "dotColor=%@\n",
+    return [NSString stringWithFormat:@"\tdotPoint=%@\n"
+            "\tdotRadius=%f\n"
+            "\tdotFillColor=%@\n"
+            "\tdotBorderColor=%@\n",
             NSStringFromCGPoint(self.dotPoint),
             self.dotRadius,
-            self.dotColor.description];
+            self.dotFillColor.description,
+            self.dotBorderColor.description];
 }
 
 #pragma mark Private methods

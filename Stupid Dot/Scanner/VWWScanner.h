@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "VWWScannerDot.h"
 
 typedef enum{
     VWWScannerBorderTypeBlack = 0,
@@ -17,6 +17,7 @@ typedef enum{
 } VWWScannerBorderType;
 
 @interface VWWScanner : NSObject
+@property (nonatomic, strong) VWWScannerDot *dot;
 @property (nonatomic) VWWScannerBorderType *borderType;
 @property (nonatomic) float borderThreshold;
 @property (nonatomic) BOOL renderProgressLine;

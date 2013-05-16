@@ -20,6 +20,7 @@ typedef void (^VWWScannerControllerRenderScannersBlock)(NSArray *scanners);
 +(VWWScannerController*)sharedInstance;
 -(void)setImage:(UIImage*)image;
 -(void)addScanner:(VWWScanner*)scanner;
+-(void)printScanners;
 -(void)removeScanner:(VWWScanner*)scanner;
 -(void)removeAllScanners;
 -(void)startProcessing;
