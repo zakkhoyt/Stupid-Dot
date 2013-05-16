@@ -38,7 +38,7 @@
     self = [super init];
     if(self){
         [self initializeInstanceVariables];
-        _dot.dotPoint = point;
+        _dot.point = point;
 
     }
     return self;
@@ -50,7 +50,7 @@
     _vector = [[VWWScannerVector alloc]init];
     _progress = [[VWWScannerLine alloc]init];
     _deflection = [[VWWScannerLine alloc]init];
-    _deflection.lineColor = [UIColor orangeColor];
+    _deflection.color = [UIColor orangeColor];
     _borderType = VWWScannerBorderTypeBlack;
     _borderThreshold = 0.5;
     _renderProgressLine = YES;

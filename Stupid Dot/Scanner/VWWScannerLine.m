@@ -13,23 +13,23 @@
     NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
-        _lineBegin = CGPointZero;
-        _lineEnd = CGPointZero;
-        _lineRadius = 1.0;
-        _lineColor = [UIColor blueColor];
+        _beginPoint = CGPointZero;
+        _endPoint = CGPointZero;
+        _radius = 1.0;
+        _color = [UIColor blueColor];
     }
     return self;
 }
 
 -(NSString*)description{
-    return [NSString stringWithFormat:@"\tlineBegin=%@\n"
-            "\tlineEnd=%@\n"
-            "\tlineRadius=%f\n"
-            "\tlineColor=%@\n",
-            NSStringFromCGPoint(self.lineBegin),
-            NSStringFromCGPoint(self.lineEnd),
-            self.lineRadius,
-            self.lineColor.description];
+    return [NSString stringWithFormat:@"\tbeginPoint=%@\n"
+            "\tendPoint=%@\n"
+            "\tradius=%f\n"
+            "\tcolor=%@\n",
+            NSStringFromCGPoint(self.beginPoint),
+            NSStringFromCGPoint(self.endPoint),
+            self.radius,
+            self.color.description];
 }
 
 #pragma mark Private methods

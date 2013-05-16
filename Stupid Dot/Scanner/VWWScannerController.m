@@ -12,7 +12,6 @@
 @property (nonatomic, strong) NSMutableArray *scanners;
 @property (nonatomic) dispatch_queue_t scannerQueue;
 @property (nonatomic, strong) NSTimer *timer;
-//@property (nonatomic, strong) NSArray *pixelBuffer;
 @property (nonatomic, strong) UIImage *image;
 @end
 

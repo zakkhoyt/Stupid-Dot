@@ -13,23 +13,23 @@
     NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
-        _dotPoint = CGPointMake(0, 0);
-        _dotRadius = 8.0;
-        _dotFillColor = [UIColor redColor];
-        _dotBorderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+        _point = CGPointMake(0, 0);
+        _radius = 8.0;
+        _fillColor = [UIColor redColor];
+        _borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     }
     return self;
 }
 
 -(NSString*)description{
-    return [NSString stringWithFormat:@"\tdotPoint=%@\n"
-            "\tdotRadius=%f\n"
-            "\tdotFillColor=%@\n"
-            "\tdotBorderColor=%@\n",
-            NSStringFromCGPoint(self.dotPoint),
-            self.dotRadius,
-            self.dotFillColor.description,
-            self.dotBorderColor.description];
+    return [NSString stringWithFormat:@"\troint=%@\n"
+            "\tradius=%f\n"
+            "\tfillColor=%@\n"
+            "\tborderColor=%@\n",
+            NSStringFromCGPoint(self.point),
+            self.radius,
+            self.fillColor.description,
+            self.borderColor.description];
 }
 
 #pragma mark Private methods

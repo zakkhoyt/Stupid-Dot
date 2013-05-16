@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface VWWScannerDot : NSObject
-@property (nonatomic) CGPoint dotPoint;
-@property (nonatomic) CGFloat dotRadius;
-@property (nonatomic, strong) UIColor *dotFillColor;
-@property (nonatomic, strong) UIColor *dotBorderColor;
+@property (nonatomic) CGPoint point;
+@property (nonatomic) CGFloat radius;
+@property (nonatomic, strong) UIColor *fillColor;
+@property (nonatomic, strong) UIColor *borderColor;
 @end

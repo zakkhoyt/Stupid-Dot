@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface VWWScannerLine : NSObject
-@property (nonatomic) CGPoint lineBegin;
-@property (nonatomic) CGPoint lineEnd;
-@property (nonatomic) CGFloat lineRadius;
-@property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic) CGPoint beginPoint;
+@property (nonatomic) CGPoint endPoint;
+@property (nonatomic) CGFloat radius;
+@property (nonatomic, strong) UIColor *color;
 @end

@@ -41,17 +41,23 @@
 
         // Draw a circle (filled)
         CGFloat redFill, greenFill, blueFill, alphaFill;
-        [scanner.dot.dotFillColor getRed:&redFill green:&greenFill blue:&blueFill alpha:&alphaFill];
+        [scanner.dot.fillColor getRed:&redFill green:&greenFill blue:&blueFill alpha:&alphaFill];
         CGFloat fillColor[4] = {redFill, greenFill, blueFill, alphaFill};
         CGContextSetFillColor(cgContext, fillColor);
-        CGContextFillEllipseInRect(cgContext, CGRectMake(scanner.dot.dotPoint.x, scanner.dot.dotPoint.y, scanner.dot.dotRadius, scanner.dot.dotRadius));
+        CGContextFillEllipseInRect(cgContext, CGRectMake(scanner.dot.point.x,
+                                                         scanner.dot.point.y,
+                                                         scanner.dot.radius,
+                                                         scanner.dot.radius));
         
         // Draw a circle (border only)
         CGFloat redBorder, greenBorder, blueBorder, alphaBorder;
-        [scanner.dot.dotBorderColor getRed:&redBorder green:&greenBorder blue:&blueBorder alpha:&alphaBorder];
+        [scanner.dot.borderColor getRed:&redBorder green:&greenBorder blue:&blueBorder alpha:&alphaBorder];
         CGFloat borderColor[4] = {redBorder, greenBorder, blueBorder, alphaBorder};
         CGContextSetStrokeColor(cgContext, borderColor);
-        CGContextStrokeEllipseInRect(cgContext, CGRectMake(scanner.dot.dotPoint.x, scanner.dot.dotPoint.y, scanner.dot.dotRadius, scanner.dot.dotRadius));
+        CGContextStrokeEllipseInRect(cgContext, CGRectMake(scanner.dot.point.x,
+                                                           scanner.dot.point.y,
+                                                           scanner.dot.radius,
+                                                           scanner.dot.radius));
         
         
         CGContextDrawPath(cgContext,kCGPathStroke);
