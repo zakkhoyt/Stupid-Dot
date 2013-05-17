@@ -138,7 +138,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScannerDot.m"
-         timestampString = "390373795.868225"
+         timestampString = "390460092.253804"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "19"
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScanner.m"
-         timestampString = "390457665.029971"
+         timestampString = "390459932.859415"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "190"
-         endingLineNumber = "190"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
          landmarkName = "-process"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScanner.m"
-         timestampString = "390457665.029971"
+         timestampString = "390459429.228631"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "207"
-         endingLineNumber = "207"
+         startingLineNumber = "219"
+         endingLineNumber = "219"
          landmarkName = "-processThereminNotesWithX:Y:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScanner.m"
-         timestampString = "390457665.029971"
+         timestampString = "390459429.228631"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "211"
-         endingLineNumber = "211"
+         startingLineNumber = "223"
+         endingLineNumber = "223"
          landmarkName = "-processThereminNotesWithX:Y:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -281,11 +281,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScanner.m"
-         timestampString = "390457665.029971"
+         timestampString = "390459429.228631"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "212"
-         endingLineNumber = "212"
+         startingLineNumber = "224"
+         endingLineNumber = "224"
          landmarkName = "-processThereminNotesWithX:Y:"
          landmarkType = "5">
       </FileBreakpoint>

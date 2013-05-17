@@ -14,4 +14,6 @@
 @property (nonatomic, readonly) float hypoteneuseRatioPerSecond;    // How fast the dot is moving in pixels per second
 @property (nonatomic, readonly) float angle;                          // 0 right, 90 is straight up, etc...
 -(void)setRiseRatio:(float)riseRatio runRatio:(float)runRatio timeInterval:(NSTimeInterval)timeInterval;
+-(void)reverseRise;
+-(void)reverseRun;
 @end

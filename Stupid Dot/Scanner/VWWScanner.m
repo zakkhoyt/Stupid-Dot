@@ -182,26 +182,38 @@
     
     
     
-    CGPoint nextDot = self.dot.point;
+    CGPoint nextPoint = self.dot.point;
     CGFloat deltaX = self.vector.runRatioPerSecond / fractionOfSecond;
     CGFloat deltaY = self.vector.riseRatioPerSecond / fractionOfSecond;
-    nextDot.x += deltaX;
-    nextDot.y -= deltaY;
-    self.dot.point = nextDot;
+    nextPoint.x += deltaX;
+    nextPoint.y -= deltaY;
+    
+    if(nextPoint.x >= 1.0){
+        [self.vector reverseRun];
+        nextPoint.x = 1.0;
+    }
+    else if (nextPoint.x <= 0.0){
+        [self.vector reverseRun];
+        nextPoint.x = 0.0;
+    }
+    
+    if(nextPoint.y >= 1.0){
+        [self.vector reverseRise];
+        nextPoint.y = 1.0;
+    }
+    else if(nextPoint.y <= 0.0){
+        [self.vector reverseRise];
+        nextPoint.y = 0.0;
+    }
 
-
-    
-    [self processThereminNotesWithX:nextDot.x Y:nextDot.y];
-    
-    
+    self.dot.point = nextPoint;
+    [self processThereminFrequenciesFromPoint];
     
     self.date = [NSDate date];
-    
 }
 
--(void)processThereminNotesWithX:(CGFloat)x Y:(CGFloat)y{
+-(void)processThereminFrequenciesFromPoint{
 
-    
     VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
     float frequencyX = touchX.frequencyMax * self.dot.point.x;
     [VWWThereminInputs touchscreenInput].x.frequency = frequencyX;
@@ -213,8 +225,8 @@
     // If we've gone off the view, mute both channels;
     if(self.dot.point.x <= 0 || self.dot.point.x >= 1.0 ||
        self.dot.point.y <= 0 || self.dot.point.y >= 1.0){
-        [VWWThereminInputs touchscreenInput].x.muted = YES;
-        [VWWThereminInputs touchscreenInput].y.muted = YES;
+//        [VWWThereminInputs touchscreenInput].x.muted = YES;
+//        [VWWThereminInputs touchscreenInput].y.muted = YES;
     }
     else{
         [VWWThereminInputs touchscreenInput].x.muted = NO;

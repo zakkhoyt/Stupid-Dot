@@ -18,7 +18,7 @@
 // Temporary in order to not render for release 1.0
 #define VWW_SKIP_RENDERING_CALL     1
 
-#define VWW_FREQUENCY_MAX           3000.0
+#define VWW_FREQUENCY_MAX           1000.0
 #define VWW_FREQUENCY_MIN           20.0
 #define VWW_WAVETYPE                kWaveSin
 #define VWW_SENSITIVITY             1.0
