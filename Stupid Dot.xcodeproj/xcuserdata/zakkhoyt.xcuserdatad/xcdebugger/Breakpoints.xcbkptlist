@@ -260,7 +260,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "219"
          endingLineNumber = "219"
-         landmarkName = "-processThereminNotesWithX:Y:"
+         landmarkName = "-processThereminFrequenciesFromPoint"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -273,7 +273,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "223"
          endingLineNumber = "223"
-         landmarkName = "-processThereminNotesWithX:Y:"
+         landmarkName = "-processThereminFrequenciesFromPoint"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -286,7 +286,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "224"
          endingLineNumber = "224"
-         landmarkName = "-processThereminNotesWithX:Y:"
+         landmarkName = "-processThereminFrequenciesFromPoint"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

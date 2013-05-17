@@ -35,6 +35,7 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    [self addGestureRecognizers];
     _scannerController = [[VWWScannerController alloc]init];
     
     VWWViewController *weakSelf = self;
@@ -97,6 +98,26 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
         };
     }
 }
+
+
+
+-(void)addGestureRecognizers{
+    
+    UILongPressGestureRecognizer* longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureHandler:)];
+    [self.view addGestureRecognizer:longPressGestureRecognizer];
+}
+
+
+-(void)longPressGestureHandler:(UIGestureRecognizer*)gestureRecognizer{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [self performSegueWithIdentifier:kSegueMainToImagePopover sender:self];
+    }
+
+}
+
+
+
+
 
 #pragma mark IBActions
 
