@@ -7,16 +7,17 @@
 //
 
 #import "VWWScanner.h"
-#import "VWWScannerVector.h"
-
 #import "VWWScannerLine.h"
+#import "VWWThereminInputs.h"
+
 
 @interface VWWScanner ()
 
-@property (nonatomic, strong) VWWScannerVector *vector;
+
 @property (nonatomic, strong) VWWScannerLine *progress;
 @property (nonatomic, strong) VWWScannerLine *deflection;
 @property (nonatomic) BOOL running;
+@property (nonatomic, strong) NSDate *date;
 
 
 //@property (nonatomic) CGPoint previewPoint; // TODO: this doesn't really fit here...... where can we put it?
@@ -33,6 +34,7 @@
     return self;
 }
 
+// The point's x and y are floats from (0.0 - 1.0)
 -(id)initWithPoint:(CGPoint)point{
     NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
@@ -116,15 +118,7 @@
 #pragma mark Public methods
 
 -(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
-    [self.vector updateAngleWithBeginPoint:beginPoint endPoint:endPoint];
-
-    CGFloat rise = abs(endPoint.x - beginPoint.x);
-    CGFloat run = abs(endPoint.y - beginPoint.y);
-    CGFloat distance = sqrt(rise*rise + run*run);
-    self.vector.speed = distance / timeInterval;
-    
-
+    [self.vector setBeginPoint:beginPoint endPoint:endPoint timeInterval:timeInterval];
 }
 
 //-(void)setPreviewPoint:(CGPoint)point{
@@ -135,6 +129,7 @@
 -(void)start{
     NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self.running = YES;
+    self.date = [NSDate date];
     
 }
 
@@ -151,16 +146,80 @@
     }
     
 //    NSLog(@"%s:%d %p", __FUNCTION__, __LINE__, self);
-    
-    
-    
+
+    NSTimeInterval executionTime = [self.date timeIntervalSinceNow] * -1.0;
+    float fractionOfSecond = 1/executionTime;
     
 
     
     
-//    NSTimeInterval executionTime = [self.lastProcessDate timeIntervalSinceNow] * -1000.0;
-//    self.lastProcessDate = [NSDate date];
+    
+    CGPoint nextDot = self.dot.point;
+    CGFloat deltaX = self.vector.runPixelsPerSecond / fractionOfSecond;
+    CGFloat deltaY = self.vector.risePixelsPerSecond / fractionOfSecond;
+    nextDot.x += deltaX;
+    nextDot.y += deltaY;
+    self.dot.point = nextDot;
+    
+
+    
+    [self processThereminNotesWithX:nextDot.x Y:nextDot.y];
+    
+    
+    
+    self.date = [NSDate date];
     
 }
 
+-(void)processThereminNotesWithX:(CGFloat)x Y:(CGFloat)y{
+    
+    // First get the image into your data buffer
+    CGImageRef imageRef = [self.image CGImage];
+    NSUInteger width = CGImageGetWidth(imageRef);
+    NSUInteger height = CGImageGetHeight(imageRef);
+    
+    
+    VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+    float ratioX = x/(float)width;
+    if(ratioX <= 0 || ratioX >= 1.0){
+        
+        [VWWThereminInputs touchscreenInput].x.muted = YES;
+    }
+    else{
+        [VWWThereminInputs touchscreenInput].x.muted = NO;
+    }
+    NSLog(@"ratioX:%f width:%d height:%d", ratioX, width, height);
+    float frequencyX = touchX.frequencyMax * ratioX;
+    [VWWThereminInputs touchscreenInput].x.frequency = frequencyX;
+
+    
+    VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
+    float ratioY = y/(float)height;
+    if(ratioY <= 0 || ratioY >= 1.0){
+        [VWWThereminInputs touchscreenInput].y.muted = YES;
+    }
+    else{
+        [VWWThereminInputs touchscreenInput].y.muted = NO;
+    };
+    
+    NSLog(@"ratioY:%f width:%d height:%d", ratioY, width, height);
+    float frequencyY = touchY.frequencyMax * ratioY;
+    [VWWThereminInputs touchscreenInput].y.frequency = frequencyY;
+    
+    
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+

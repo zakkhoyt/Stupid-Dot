@@ -39,7 +39,7 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
     
     VWWViewController *weakSelf = self;
     _scannerController.renderScannersBlock = ^(NSArray *scanners){
-        // TODO: This is an array of VWWScanner objects. Use them to render the dots either on the VWWImageView, or another layer;
+        //This is an array of VWWScanner objects. Use them to render the dots either on the VWWImageView, or another layer;
         [weakSelf.scannerView renderScanners:scanners];
     };
     
@@ -49,6 +49,17 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
         // Draw dot to signal something is happening
         // Generate a new scanner and add it to the controller
         self.tempScanner = [[VWWScanner alloc]initWithPoint:touchPoint];
+        
+//        CGRect frame = self.imageView.frame;
+//        CGPoint point = CGPointMake(touchPoint.x / (float)frame.size.width, touchPoint.y / (float)frame.size.height);
+//        self.tempScanner = [[VWWScanner alloc]initWithPoint:point];
+
+        
+#if defined (VWW_ONLY_ONE_SCANNER)
+        [self.scannerController removeAllScanners];
+#else
+
+#endif
         [self.scannerController addScanner:self.tempScanner];
     };
     
@@ -58,7 +69,7 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
     
     _imageView.generateVectorBlock = ^(CGPoint touchBegin, CGPoint touchEnd, NSTimeInterval timeInterval){
         // Update more properties of self.tempscanner and start it
-        [self.tempScanner setBeginPoint:touchBegin endPoint:touchEnd timeInterval:timeInterval];
+        [self.tempScanner.vector setBeginPoint:touchBegin endPoint:touchEnd timeInterval:timeInterval];
         [self.tempScanner start];
         
         [self.scannerController printScanners];

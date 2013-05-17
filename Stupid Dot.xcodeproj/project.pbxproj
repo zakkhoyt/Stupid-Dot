@@ -44,6 +44,18 @@
 		C64DC6CD17446BD9002CEE67 /* VWWImagePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */; };
 		C64DC6CE17446BD9002CEE67 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CC17446BD9002CEE67 /* VWWViewController.m */; };
 		C64DC6D117446EAB002CEE67 /* VWWImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6D017446EAB002CEE67 /* VWWImageView.m */; };
+		C698D8081745CFD100022CDF /* VWWThereminNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FA1745CFD100022CDF /* VWWThereminNotes.m */; };
+		C698D8091745CFD100022CDF /* VWWThereminSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FC1745CFD100022CDF /* VWWThereminSynthesizer.mm */; };
+		C698D80A1745CFD100022CDF /* VWWFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FF1745CFD100022CDF /* VWWFileSystem.m */; };
+		C698D80B1745CFD100022CDF /* VWWThereminEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C698D8011745CFD100022CDF /* VWWThereminEffectNoteKey.m */; };
+		C698D80C1745CFD100022CDF /* VWWThereminInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = C698D8031745CFD100022CDF /* VWWThereminInput.mm */; };
+		C698D80D1745CFD100022CDF /* VWWThereminInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C698D8051745CFD100022CDF /* VWWThereminInputAxis.mm */; };
+		C698D80E1745CFD100022CDF /* VWWThereminInputs.mm in Sources */ = {isa = PBXBuildFile; fileRef = C698D8071745CFD100022CDF /* VWWThereminInputs.mm */; };
+		C698D8181745D08E00022CDF /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C698D8101745D08E00022CDF /* CADebugMacros.cpp */; };
+		C698D8191745D08E00022CDF /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C698D8141745D08E00022CDF /* CAStreamBasicDescription.cpp */; };
+		C698D81A1745D08E00022CDF /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C698D8161745D08E00022CDF /* CAXException.cpp */; };
+		C698D81D1745D11800022CDF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C698D81B1745D11700022CDF /* AudioToolbox.framework */; };
+		C698D81E1745D11800022CDF /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C698D81C1745D11700022CDF /* CoreAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +120,33 @@
 		C64DC6CC17446BD9002CEE67 /* VWWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
 		C64DC6CF17446EAB002CEE67 /* VWWImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWImageView.h; path = view/VWWImageView.h; sourceTree = "<group>"; };
 		C64DC6D017446EAB002CEE67 /* VWWImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWImageView.m; path = view/VWWImageView.m; sourceTree = "<group>"; };
+		C698D7F51745CB9F00022CDF /* VWWStupidDotConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWStupidDotConfig.h; sourceTree = "<group>"; };
+		C698D7F81745CFD100022CDF /* VWWThereminMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMath.h; sourceTree = "<group>"; };
+		C698D7F91745CFD100022CDF /* VWWThereminNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminNotes.h; sourceTree = "<group>"; };
+		C698D7FA1745CFD100022CDF /* VWWThereminNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminNotes.m; sourceTree = "<group>"; };
+		C698D7FB1745CFD100022CDF /* VWWThereminSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminSynthesizer.h; sourceTree = "<group>"; };
+		C698D7FC1745CFD100022CDF /* VWWThereminSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminSynthesizer.mm; sourceTree = "<group>"; };
+		C698D7FD1745CFD100022CDF /* VWWThereminTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminTypes.h; sourceTree = "<group>"; };
+		C698D7FE1745CFD100022CDF /* VWWFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWFileSystem.h; sourceTree = "<group>"; };
+		C698D7FF1745CFD100022CDF /* VWWFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWFileSystem.m; sourceTree = "<group>"; };
+		C698D8001745CFD100022CDF /* VWWThereminEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminEffectNoteKey.h; sourceTree = "<group>"; };
+		C698D8011745CFD100022CDF /* VWWThereminEffectNoteKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminEffectNoteKey.m; sourceTree = "<group>"; };
+		C698D8021745CFD100022CDF /* VWWThereminInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInput.h; sourceTree = "<group>"; };
+		C698D8031745CFD100022CDF /* VWWThereminInput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminInput.mm; sourceTree = "<group>"; };
+		C698D8041745CFD100022CDF /* VWWThereminInputAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInputAxis.h; sourceTree = "<group>"; };
+		C698D8051745CFD100022CDF /* VWWThereminInputAxis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminInputAxis.mm; sourceTree = "<group>"; };
+		C698D8061745CFD100022CDF /* VWWThereminInputs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInputs.h; sourceTree = "<group>"; };
+		C698D8071745CFD100022CDF /* VWWThereminInputs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminInputs.mm; sourceTree = "<group>"; };
+		C698D8101745D08E00022CDF /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		C698D8111745D08E00022CDF /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		C698D8121745D08E00022CDF /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
+		C698D8131745D08E00022CDF /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		C698D8141745D08E00022CDF /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		C698D8151745D08E00022CDF /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		C698D8161745D08E00022CDF /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		C698D8171745D08E00022CDF /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		C698D81B1745D11700022CDF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C698D81C1745D11700022CDF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C698D81D1745D11800022CDF /* AudioToolbox.framework in Frameworks */,
+				C698D81E1745D11800022CDF /* CoreAudio.framework in Frameworks */,
 				C62F8196174451F9001A792A /* UIKit.framework in Frameworks */,
 				C62F8198174451F9001A792A /* Foundation.framework in Frameworks */,
 				C62F819A174451F9001A792A /* CoreGraphics.framework in Frameworks */,
@@ -156,6 +197,8 @@
 		C62F8194174451F9001A792A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C698D81B1745D11700022CDF /* AudioToolbox.framework */,
+				C698D81C1745D11700022CDF /* CoreAudio.framework */,
 				C62F8195174451F9001A792A /* UIKit.framework */,
 				C62F8197174451F9001A792A /* Foundation.framework */,
 				C62F8199174451F9001A792A /* CoreGraphics.framework */,
@@ -171,6 +214,7 @@
 				C64DC6C817446BD9002CEE67 /* controller */,
 				C64DC6D217446EB2002CEE67 /* view */,
 				C62F81D31744521B001A792A /* scanner */,
+				C698D7F61745CFD100022CDF /* theremin */,
 				C62F819C174451F9001A792A /* Supporting Files */,
 				C62F81E317445453001A792A /* images */,
 			);
@@ -180,6 +224,7 @@
 		C62F819C174451F9001A792A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C698D7F51745CB9F00022CDF /* VWWStupidDotConfig.h */,
 				C62F81A4174451F9001A792A /* VWWAppDelegate.h */,
 				C62F81A5174451FA001A792A /* VWWAppDelegate.m */,
 				C62F819D174451F9001A792A /* Stupid Dot-Info.plist */,
@@ -278,6 +323,53 @@
 				C62F81B0174451FA001A792A /* MainStoryboard_iPad.storyboard */,
 			);
 			name = storyboards;
+			sourceTree = "<group>";
+		};
+		C698D7F61745CFD100022CDF /* theremin */ = {
+			isa = PBXGroup;
+			children = (
+				C698D80F1745D08E00022CDF /* Apple CA Helpers */,
+				C698D7F71745CFD100022CDF /* Synthesizer */,
+				C698D7FE1745CFD100022CDF /* VWWFileSystem.h */,
+				C698D7FF1745CFD100022CDF /* VWWFileSystem.m */,
+				C698D8001745CFD100022CDF /* VWWThereminEffectNoteKey.h */,
+				C698D8011745CFD100022CDF /* VWWThereminEffectNoteKey.m */,
+				C698D8021745CFD100022CDF /* VWWThereminInput.h */,
+				C698D8031745CFD100022CDF /* VWWThereminInput.mm */,
+				C698D8041745CFD100022CDF /* VWWThereminInputAxis.h */,
+				C698D8051745CFD100022CDF /* VWWThereminInputAxis.mm */,
+				C698D8061745CFD100022CDF /* VWWThereminInputs.h */,
+				C698D8071745CFD100022CDF /* VWWThereminInputs.mm */,
+			);
+			path = theremin;
+			sourceTree = "<group>";
+		};
+		C698D7F71745CFD100022CDF /* Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				C698D7F81745CFD100022CDF /* VWWThereminMath.h */,
+				C698D7F91745CFD100022CDF /* VWWThereminNotes.h */,
+				C698D7FA1745CFD100022CDF /* VWWThereminNotes.m */,
+				C698D7FB1745CFD100022CDF /* VWWThereminSynthesizer.h */,
+				C698D7FC1745CFD100022CDF /* VWWThereminSynthesizer.mm */,
+				C698D7FD1745CFD100022CDF /* VWWThereminTypes.h */,
+			);
+			path = Synthesizer;
+			sourceTree = "<group>";
+		};
+		C698D80F1745D08E00022CDF /* Apple CA Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C698D8101745D08E00022CDF /* CADebugMacros.cpp */,
+				C698D8111745D08E00022CDF /* CADebugMacros.h */,
+				C698D8121745D08E00022CDF /* CADebugPrintf.h */,
+				C698D8131745D08E00022CDF /* CAMath.h */,
+				C698D8141745D08E00022CDF /* CAStreamBasicDescription.cpp */,
+				C698D8151745D08E00022CDF /* CAStreamBasicDescription.h */,
+				C698D8161745D08E00022CDF /* CAXException.cpp */,
+				C698D8171745D08E00022CDF /* CAXException.h */,
+			);
+			path = "Apple CA Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +507,16 @@
 				C64DC6CE17446BD9002CEE67 /* VWWViewController.m in Sources */,
 				C64DC6D117446EAB002CEE67 /* VWWImageView.m in Sources */,
 				C603B6721744943700585877 /* VWWScannerView.m in Sources */,
+				C698D8081745CFD100022CDF /* VWWThereminNotes.m in Sources */,
+				C698D8091745CFD100022CDF /* VWWThereminSynthesizer.mm in Sources */,
+				C698D80A1745CFD100022CDF /* VWWFileSystem.m in Sources */,
+				C698D80B1745CFD100022CDF /* VWWThereminEffectNoteKey.m in Sources */,
+				C698D80C1745CFD100022CDF /* VWWThereminInput.mm in Sources */,
+				C698D80D1745CFD100022CDF /* VWWThereminInputAxis.mm in Sources */,
+				C698D80E1745CFD100022CDF /* VWWThereminInputs.mm in Sources */,
+				C698D8181745D08E00022CDF /* CADebugMacros.cpp in Sources */,
+				C698D8191745D08E00022CDF /* CAStreamBasicDescription.cpp in Sources */,
+				C698D81A1745D08E00022CDF /* CAXException.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,10 +635,14 @@
 		C62F81CE174451FA001A792A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
 				INFOPLIST_FILE = "Stupid Dot/Stupid Dot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C0F526BF-5C72-4AA1-8417-238646436B2C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C0F526BF-5C72-4AA1-8417-238646436B2C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -544,10 +650,14 @@
 		C62F81CF174451FA001A792A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
 				INFOPLIST_FILE = "Stupid Dot/Stupid Dot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C0F526BF-5C72-4AA1-8417-238646436B2C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C0F526BF-5C72-4AA1-8417-238646436B2C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

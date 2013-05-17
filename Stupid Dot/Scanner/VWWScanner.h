@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VWWScannerDot.h"
+#import "VWWScannerVector.h"
 
 typedef enum{
     VWWScannerBorderTypeBlack = 0,
@@ -18,15 +19,18 @@ typedef enum{
 
 @interface VWWScanner : NSObject
 @property (nonatomic, strong) VWWScannerDot *dot;
+@property (nonatomic, strong) VWWScannerVector *vector;
 @property (nonatomic) VWWScannerBorderType *borderType;
 @property (nonatomic) float borderThreshold;
 @property (nonatomic) BOOL renderProgressLine;
 @property (nonatomic) BOOL renderDeflectionLine;
 @property (nonatomic, weak) UIImage *image;
+@property (nonatomic) float framesPerSecond;
 
 
 -(id)initWithPoint:(CGPoint)point;
 -(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval;
+
 //-(void)setPreviewPoint:(CGPoint)point;
 -(void)start;
 -(void)stop;
