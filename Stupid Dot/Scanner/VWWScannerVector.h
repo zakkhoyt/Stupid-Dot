@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface VWWScannerVector : NSObject
-@property (nonatomic, readonly) float risePixelsPerSecond;           // (0,0 is upper left)
-@property (nonatomic, readonly) float runPixelsPerSecond;            //
-@property (nonatomic, readonly) float hypoteneusePixelsPerSecond;    // How fast the dot is moving in pixels per second
-@property (nonatomic, readonly) float angle;                          // 0 is up, 90 is right
--(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval;
+@property (nonatomic, readonly) float riseRatioPerSecond;           // (0,0 is upper left)
+@property (nonatomic, readonly) float runRatioPerSecond;            //
+@property (nonatomic, readonly) float hypoteneuseRatioPerSecond;    // How fast the dot is moving in pixels per second
+@property (nonatomic, readonly) float angle;                          // 0 right, 90 is straight up, etc...
+-(void)setRiseRatio:(float)riseRatio runRatio:(float)runRatio timeInterval:(NSTimeInterval)timeInterval;
 @end

@@ -117,8 +117,8 @@
 
 #pragma mark Public methods
 
--(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval{
-    [self.vector setBeginPoint:beginPoint endPoint:endPoint timeInterval:timeInterval];
+-(void)setRiseRatio:(float)riseRatio runRatio:(float)runRatio timeInterval:(NSTimeInterval)timeInterval{
+    [self.vector setRiseRatio:riseRatio runRatio:runRatio timeInterval:timeInterval];
 }
 
 //-(void)setPreviewPoint:(CGPoint)point{
@@ -155,15 +155,15 @@
     
     
     CGPoint nextDot = self.dot.point;
-    CGFloat deltaX = self.vector.runPixelsPerSecond / fractionOfSecond;
-    CGFloat deltaY = self.vector.risePixelsPerSecond / fractionOfSecond;
+    CGFloat deltaX = self.vector.runRatioPerSecond / fractionOfSecond;
+    CGFloat deltaY = self.vector.riseRatioPerSecond / fractionOfSecond;
     nextDot.x += deltaX;
-    nextDot.y += deltaY;
+    nextDot.y -= deltaY;
     self.dot.point = nextDot;
-    
+
 
     
-    [self processThereminNotesWithX:nextDot.x Y:nextDot.y];
+//    [self processThereminNotesWithX:nextDot.x Y:nextDot.y];
     
     
     

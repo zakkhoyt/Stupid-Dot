@@ -9,9 +9,9 @@
 #import "VWWScannerVector.h"
 
 @interface VWWScannerVector ()
-@property (nonatomic) float risePixelsPerSecond;           // (0,0 is upper left)
-@property (nonatomic) float runPixelsPerSecond;            //
-@property (nonatomic) float hypoteneusePixelsPerSecond;    // How fast the dot is moving in pixels per second
+@property (nonatomic) float riseRatioPerSecond;           // (0,0 is upper left)
+@property (nonatomic) float runRatioPerSecond;            //
+@property (nonatomic) float hypoteneuseRatioPerSecond;    // How fast the dot is moving in pixels per second
 @property (nonatomic) float angle;                          // 0 is up, 90 is right
 @end
 
@@ -21,65 +21,50 @@
     NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
-        self.risePixelsPerSecond = 7;
-        self.runPixelsPerSecond = 7;
-        self.hypoteneusePixelsPerSecond = 49;
+        self.riseRatioPerSecond = 7;
+        self.runRatioPerSecond = 7;
+        self.hypoteneuseRatioPerSecond = 49;
         self.angle = 0;
     }
     return self;
 }
 
 -(NSString*)description{
-    return [NSString stringWithFormat:@"\trisePixelsPerSecond=%f\n"
-            @"\trunPixelsPerSecond=%f\n"
-            @"\thypoteneusePixelsPerSecond=%f\n"
+    return [NSString stringWithFormat:@"\triseRatioPerSecond=%f\n"
+            @"\trunRatioPerSecond=%f\n"
+            @"\thypoteneuseRatioPerSecond=%f\n"
             @"\tangle=%f\n",
-            self.risePixelsPerSecond,
-            self.runPixelsPerSecond,
-            self.hypoteneusePixelsPerSecond,
+            self.riseRatioPerSecond,
+            self.runRatioPerSecond,
+            self.hypoteneuseRatioPerSecond,
             self.angle];
 }
 
 
 #pragma mark Private methods
-//-(void)updateAngleWithBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint{
-//    self.risePixelsPerSecond = endPoint.x - beginPoint.x;
-//    self.runPixelsPerSecond = endPoint.y - beginPoint.y;
-//    
-//    NSLog(@"risePixelsPerSecond:%f runPixelsPerSecond:%f", self.risePixelsPerSecond, self.runPixelsPerSecond);
-//    float angleInRadians = atan2f(self.risePixelsPerSecond, -self.runPixelsPerSecond);
-//    if(self.risePixelsPerSecond < 0){
-//        angleInRadians += 2*M_PI;
-//    }
-//    float angleInDegrees = angleInRadians * 180 / M_PI;
-//    self.angle = angleInDegrees;
-//    NSLog(@"Updated vector angle: %fr %fd", angleInRadians, angleInDegrees);
-//}
+
 #pragma mark Public methods
 
 
-
--(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval{
+-(void)setRiseRatio:(float)riseRatio runRatio:(float)runRatio timeInterval:(NSTimeInterval)timeInterval{
     NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     
-
+    self.riseRatioPerSecond = -(riseRatio / timeInterval);
+    self.runRatioPerSecond = runRatio / timeInterval;
+    self.hypoteneuseRatioPerSecond = sqrt(pow(abs(riseRatio), 2) + pow(abs(runRatio), 2)) / timeInterval;
     
-    self.risePixelsPerSecond = (endPoint.x - beginPoint.x) / timeInterval;
-    self.runPixelsPerSecond = (endPoint.y - beginPoint.y) / timeInterval;
-    self.hypoteneusePixelsPerSecond = sqrt(pow(abs(self.risePixelsPerSecond), 2) + pow(abs(self.runPixelsPerSecond), 2)) / timeInterval;
-    
-    NSLog(@"risePixelsPerSecond:%f runPixelsPerSecond:%f", self.risePixelsPerSecond, self.runPixelsPerSecond);
-    float angleInRadians = atan2f(self.risePixelsPerSecond, -self.runPixelsPerSecond);
-    if(self.risePixelsPerSecond < 0){
+    NSLog(@"riseRatioPerSecond:%f runRatioPerSecond:%f", self.riseRatioPerSecond, self.runRatioPerSecond);
+    float angleInRadians = atan2f(self.riseRatioPerSecond, self.runRatioPerSecond);
+    if(self.riseRatioPerSecond < 0){
         angleInRadians += 2*M_PI;
     }
     float angleInDegrees = angleInRadians * 180 / M_PI;
     self.angle = angleInDegrees;
     
-    // swap rise and run
-    float temp = self.runPixelsPerSecond;
-    self.runPixelsPerSecond = self.risePixelsPerSecond;
-    self.risePixelsPerSecond = temp;
+//    // swap rise and run
+//    float temp = self.runRatioPerSecond;
+//    self.runRatioPerSecond = self.riseRatioPerSecond;
+//    self.riseRatioPerSecond = temp;
     
     NSLog(@"Updated vector angle: %fr %fd", angleInRadians, angleInDegrees);
     

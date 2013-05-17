@@ -29,7 +29,7 @@ typedef enum{
 
 
 -(id)initWithPoint:(CGPoint)point;
--(void)setBeginPoint:(CGPoint)beginPoint endPoint:(CGPoint)endPoint timeInterval:(NSTimeInterval)timeInterval;
+-(void)setRiseRatio:(float)riseRatio runRatio:(float)runRatio timeInterval:(NSTimeInterval)timeInterval;
 
 //-(void)setPreviewPoint:(CGPoint)point;
 -(void)start;

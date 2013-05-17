@@ -48,11 +48,9 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
 	_imageView.generateDotBlock = ^(CGPoint touchPoint){
         // Draw dot to signal something is happening
         // Generate a new scanner and add it to the controller
-        self.tempScanner = [[VWWScanner alloc]initWithPoint:touchPoint];
-        
-//        CGRect frame = self.imageView.frame;
-//        CGPoint point = CGPointMake(touchPoint.x / (float)frame.size.width, touchPoint.y / (float)frame.size.height);
-//        self.tempScanner = [[VWWScanner alloc]initWithPoint:point];
+        CGRect frame = self.imageView.frame;
+        CGPoint point = CGPointMake(touchPoint.x / (float)frame.size.width, touchPoint.y / (float)frame.size.height);
+        self.tempScanner = [[VWWScanner alloc]initWithPoint:point];
 
         
 #if defined (VWW_ONLY_ONE_SCANNER)
@@ -68,8 +66,20 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
     };
     
     _imageView.generateVectorBlock = ^(CGPoint touchBegin, CGPoint touchEnd, NSTimeInterval timeInterval){
+
+        float runRatio = (touchEnd.x - touchBegin.x) / _imageView.frame.size.width;
+        float riseRatio = (touchEnd.y - touchBegin.y) / _imageView.frame.size.width;
+//        float hypoteneuse = sqrt(pow(abs(runRatio), 2) + pow(abs(riseRatio), 2));
+        
+
+        
+        
+        
+        
+        
+        
         // Update more properties of self.tempscanner and start it
-        [self.tempScanner.vector setBeginPoint:touchBegin endPoint:touchEnd timeInterval:timeInterval];
+        [self.tempScanner.vector setRiseRatio:riseRatio runRatio:runRatio timeInterval:timeInterval];
         [self.tempScanner start];
         
         [self.scannerController printScanners];
