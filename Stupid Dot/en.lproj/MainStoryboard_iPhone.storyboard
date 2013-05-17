@@ -1,23 +1,160 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="V1O-Ja-H7R">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="5">
+        <!--View Controller-->
+        <scene sceneID="Lav-Fl-PZt">
             <objects>
-                <viewController id="2" customClass="VWWViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                <viewController id="V1O-Ja-H7R" customClass="VWWViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KMh-lz-vDq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSs-ky-RRp" customClass="VWWImageView"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRp-sv-a7W">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="mb3-FQ-V0v"/>
+                                    <constraint firstAttribute="height" constant="24" id="tMu-VV-Hic"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Load Image">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadImageButtonTouchUpInside:" destination="V1O-Ja-H7R" eventType="touchUpInside" id="sg1-6k-fzv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qN-aR-EMf">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="nd2-z2-Rtw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Remove All">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeAllButtonTouchUpInside:" destination="V1O-Ja-H7R" eventType="touchUpInside" id="Ngf-Fc-HMt"/>
+                                </connections>
+                            </button>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-R2-J9B" customClass="VWWScannerView">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cfd-R2-J9B" firstAttribute="bottom" secondItem="KMh-lz-vDq" secondAttribute="bottom" type="default" id="370-Aa-Bu9"/>
+                            <constraint firstItem="Cfd-R2-J9B" firstAttribute="trailing" secondItem="KMh-lz-vDq" secondAttribute="trailing" type="default" id="8wi-Vb-cPu"/>
+                            <constraint firstItem="2qN-aR-EMf" firstAttribute="bottom" secondItem="KMh-lz-vDq" secondAttribute="bottom" type="user" id="F4U-fA-uWA"/>
+                            <constraint firstItem="2qN-aR-EMf" firstAttribute="bottom" secondItem="KMh-lz-vDq" secondAttribute="bottom" type="user" id="HmE-1h-2e2"/>
+                            <constraint firstItem="Cfd-R2-J9B" firstAttribute="top" secondItem="KMh-lz-vDq" secondAttribute="top" type="default" id="Kz7-0b-8eU"/>
+                            <constraint firstItem="WRp-sv-a7W" firstAttribute="leading" secondItem="KMh-lz-vDq" secondAttribute="leading" type="default" id="U7s-NL-etv"/>
+                            <constraint firstItem="Cfd-R2-J9B" firstAttribute="leading" secondItem="KMh-lz-vDq" secondAttribute="leading" type="default" id="XKU-0h-HkV"/>
+                            <constraint firstItem="2qN-aR-EMf" firstAttribute="trailing" secondItem="KMh-lz-vDq" secondAttribute="trailing" type="user" id="XNd-yV-jxs"/>
+                            <constraint firstItem="ZSs-ky-RRp" firstAttribute="leading" secondItem="KMh-lz-vDq" secondAttribute="leading" type="default" id="fMa-3P-e9g"/>
+                            <constraint firstItem="2qN-aR-EMf" firstAttribute="trailing" secondItem="KMh-lz-vDq" secondAttribute="trailing" type="user" id="g8h-C8-14m"/>
+                            <constraint firstItem="ZSs-ky-RRp" firstAttribute="trailing" secondItem="KMh-lz-vDq" secondAttribute="trailing" type="default" id="mgo-m5-5TY"/>
+                            <constraint firstItem="ZSs-ky-RRp" firstAttribute="bottom" secondItem="KMh-lz-vDq" secondAttribute="bottom" type="default" id="o3F-YF-reb"/>
+                            <constraint firstItem="WRp-sv-a7W" firstAttribute="top" secondItem="2qN-aR-EMf" secondAttribute="top" type="default" id="oJy-bh-AU9"/>
+                            <constraint firstItem="WRp-sv-a7W" firstAttribute="bottom" secondItem="KMh-lz-vDq" secondAttribute="bottom" type="default" id="pYe-V8-BWc"/>
+                            <constraint firstItem="ZSs-ky-RRp" firstAttribute="top" secondItem="KMh-lz-vDq" secondAttribute="top" type="default" id="u7S-l3-AAQ"/>
+                            <constraint firstItem="WRp-sv-a7W" firstAttribute="baseline" secondItem="2qN-aR-EMf" secondAttribute="baseline" type="user" id="xgO-Hg-PCF"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="ZSs-ky-RRp" id="QXn-pU-Wxz"/>
+                        <outlet property="loadImageButton" destination="WRp-sv-a7W" id="6Il-BM-Wie"/>
+                        <outlet property="scannerView" destination="Cfd-R2-J9B" id="EmL-GF-1y3"/>
+                        <segue destination="dfq-Yh-UUf" kind="modal" identifier="segueMainToImagePopover" id="wCP-RP-LHW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5i-57-sa0" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="475" y="132"/>
+        </scene>
+        <!--Image Popover View Controller-->
+        <scene sceneID="X1d-5w-rNi">
+            <objects>
+                <viewController id="dfq-Yh-UUf" customClass="VWWImagePopoverViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rRT-aR-w0M">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YYY-MN-XQn">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UITableViewCell" id="7gh-gZ-CW5">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dfq-Yh-UUf" id="0aZ-29-aWU"/>
+                                    <outlet property="delegate" destination="dfq-Yh-UUf" id="imN-Hu-L5U"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YYY-MN-XQn" firstAttribute="trailing" secondItem="rRT-aR-w0M" secondAttribute="trailing" type="default" id="60D-LM-w2y"/>
+                            <constraint firstItem="YYY-MN-XQn" firstAttribute="bottom" secondItem="rRT-aR-w0M" secondAttribute="bottom" type="default" id="Xgw-5A-AYS"/>
+                            <constraint firstItem="YYY-MN-XQn" firstAttribute="leading" secondItem="rRT-aR-w0M" secondAttribute="leading" type="default" id="ZTk-Jy-eHh"/>
+                            <constraint firstItem="YYY-MN-XQn" firstAttribute="top" secondItem="rRT-aR-w0M" secondAttribute="top" type="default" id="dnN-Sk-X2z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="X4r-9p-MfP"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="YYY-MN-XQn" id="qA0-AL-pfy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N79-60-kNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="132"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="VWWImagePopoverViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWImagePopoverViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="VWWImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWImageView.h"/>
+        </class>
+        <class className="VWWScannerView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWScannerView.h"/>
+        </class>
+        <class className="VWWViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loadImageButtonTouchUpInside:"/>
+                <relationship kind="action" name="removeAllButtonTouchUpInside:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="VWWImageView"/>
+                <relationship kind="outlet" name="loadImageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scannerView" candidateClass="VWWScannerView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

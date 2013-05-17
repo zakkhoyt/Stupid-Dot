@@ -94,7 +94,13 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
             UIImage *image = [UIImage imageNamed:imageName];
             [self.imageView setImage:image];
             [self.scannerController setImage:image];
-            [self.popoverViewController dismissPopoverAnimated:YES];
+
+            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                [self.popoverViewController dismissPopoverAnimated:YES];
+            }
+            else{
+                [self dismissViewControllerAnimated:YES completion:^{}];
+            }
         };
     }
 }
