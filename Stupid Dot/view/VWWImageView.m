@@ -43,7 +43,7 @@
     UITouch* touch = touchesArray[0];
     self.touchBegin = [touch locationInView:self];
 
-    NSLog(@"%s:%d touchBegin=%@", __FUNCTION__, __LINE__, NSStringFromCGPoint(self.touchBegin));
+//    NSLog(@"%s:%d touchBegin=%@", __FUNCTION__, __LINE__, NSStringFromCGPoint(self.touchBegin));
 
     self.generateDotBlock(self.touchBegin);
 }
@@ -74,7 +74,7 @@
     // Calculate time between touchBegin and touchEnd
     NSTimeInterval executionTime = [self.timeBegin timeIntervalSinceNow] * -1.0;
 
-    NSLog(@"%s:%d touchEnd=%@ executionTime:%f", __FUNCTION__, __LINE__, NSStringFromCGPoint(touchEnd), executionTime);
+//    NSLog(@"%s:%d touchEnd=%@ executionTime:%f", __FUNCTION__, __LINE__, NSStringFromCGPoint(touchEnd), executionTime);
 
     self.generateVectorBlock(self.touchBegin, touchEnd, executionTime);
 }

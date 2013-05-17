@@ -10,7 +10,7 @@
 
 @implementation VWWScannerDot
 -(id)init{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
         _point = CGPointMake(0, 0);

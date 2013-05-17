@@ -18,7 +18,7 @@
 @implementation VWWScannerVector
 
 -(id)init{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
         self.riseRatioPerSecond = 7;
@@ -47,13 +47,13 @@
 
 
 -(void)setRiseRatio:(float)riseRatio runRatio:(float)runRatio timeInterval:(NSTimeInterval)timeInterval{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     
     self.riseRatioPerSecond = -(riseRatio / timeInterval);
     self.runRatioPerSecond = runRatio / timeInterval;
     self.hypoteneuseRatioPerSecond = sqrt(pow(abs(riseRatio), 2) + pow(abs(runRatio), 2)) / timeInterval;
     
-    NSLog(@"riseRatioPerSecond:%f runRatioPerSecond:%f", self.riseRatioPerSecond, self.runRatioPerSecond);
+//    NSLog(@"riseRatioPerSecond:%f runRatioPerSecond:%f", self.riseRatioPerSecond, self.runRatioPerSecond);
     float angleInRadians = atan2f(self.riseRatioPerSecond, self.runRatioPerSecond);
     if(self.riseRatioPerSecond < 0){
         angleInRadians += 2*M_PI;
@@ -66,7 +66,7 @@
 //    self.runRatioPerSecond = self.riseRatioPerSecond;
 //    self.riseRatioPerSecond = temp;
     
-    NSLog(@"Updated vector angle: %fr %fd", angleInRadians, angleInDegrees);
+//    NSLog(@"Updated vector angle: %fr %fd", angleInRadians, angleInDegrees);
     
     
 }

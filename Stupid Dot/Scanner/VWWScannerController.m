@@ -29,7 +29,7 @@
 }
 
 -(id)init{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
         _framesPerSecond = 60.0;
@@ -38,11 +38,11 @@
 
         // Configure inputs from settings file (or create default)
         [VWWThereminInputs sharedInstance];
-        
 
         // TODO: move this config to a screen of some sort. 
         VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
         touchX.waveType = kWaveSawtooth;
+
         VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
         touchY.waveType = kWaveSquare;
 
@@ -99,8 +99,9 @@
     [self.scanners removeObject:scanner];
 }
 -(void)removeAllScanners{
+    // This causes a problme with having only one dot
 //    [self stopProcessing];
-//    [self stopAllScanners];
+    [self stopAllScanners];
     [self.scanners removeAllObjects];
     self.renderScannersBlock(self.scanners);
 }

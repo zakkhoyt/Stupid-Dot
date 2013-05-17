@@ -23,6 +23,5 @@ __attribute ((unused)) static NSString* kKeyTouchScreen = @"touchscreen";
 //+(VWWThereminInput*)gyroscopeInput;
 //+(VWWThereminInput*)magnetometerInput;
 +(VWWThereminInput*)touchscreenInput;
-+(void)resetConfigAndSave;
-+(void)saveConfigFile;
+@property (nonatomic, strong) NSMutableDictionary* inputs;
 @end

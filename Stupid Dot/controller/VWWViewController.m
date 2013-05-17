@@ -66,23 +66,12 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
     };
     
     _imageView.generateVectorBlock = ^(CGPoint touchBegin, CGPoint touchEnd, NSTimeInterval timeInterval){
-
+        // Update more properties of self.tempscanner and start it
         float runRatio = (touchEnd.x - touchBegin.x) / _imageView.frame.size.width;
         float riseRatio = (touchEnd.y - touchBegin.y) / _imageView.frame.size.width;
-//        float hypoteneuse = sqrt(pow(abs(runRatio), 2) + pow(abs(riseRatio), 2));
-        
-
-        
-        
-        
-        
-        
-        
-        // Update more properties of self.tempscanner and start it
         [self.tempScanner.vector setRiseRatio:riseRatio runRatio:runRatio timeInterval:timeInterval];
         [self.tempScanner start];
-        
-        [self.scannerController printScanners];
+//        [self.scannerController printScanners];
     };
     
 }

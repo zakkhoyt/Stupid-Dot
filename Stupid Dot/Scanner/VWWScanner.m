@@ -26,7 +26,7 @@
 @implementation VWWScanner
 
 -(id)init{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
         [self initializeInstanceVariables];
@@ -36,7 +36,7 @@
 
 // The point's x and y are floats from (0.0 - 1.0)
 -(id)initWithPoint:(CGPoint)point{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self = [super init];
     if(self){
         [self initializeInstanceVariables];
@@ -58,6 +58,17 @@
     _renderProgressLine = YES;
     _renderDeflectionLine = YES;
     _running = NO;
+    
+    
+//    VWWThereminInputs *inputs = [[VWWThereminInputs alloc]init];
+//    VWWThereminInput* touchScreenDevice = inputs.inputs[kKeyTouchScreen];
+//    VWWThereminInputAxis* touchX = touchScreenDevice.x;
+//    touchX.waveType = kWaveSawtooth;
+//    VWWThereminInputAxis* touchY = touchScreenDevice.y;
+//    touchY.waveType = kWaveSawtooth;
+    
+
+    
 }
 
 -(NSString*)description{
@@ -70,6 +81,10 @@
             self.vector.description,
             self.progress.description,
             self.deflection.description];
+}
+
+-(void)dealloc{
+    
 }
 
 
@@ -127,15 +142,28 @@
 //}
 
 -(void)start{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self.running = YES;
     self.date = [NSDate date];
+
+    VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+    [touchX start];
+    
+    VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
+    [touchY start];
     
 }
 
 -(void)stop{
-    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
+//    NSLog(@"%s:%d", __FUNCTION__, __LINE__);
     self.running = NO;
+    
+    VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+    [touchX stop];
+    
+    VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
+    [touchY stop];
+
 }
 
 -(void)process{
@@ -163,7 +191,7 @@
 
 
     
-//    [self processThereminNotesWithX:nextDot.x Y:nextDot.y];
+    [self processThereminNotesWithX:nextDot.x Y:nextDot.y];
     
     
     
@@ -172,40 +200,31 @@
 }
 
 -(void)processThereminNotesWithX:(CGFloat)x Y:(CGFloat)y{
-    
-    // First get the image into your data buffer
-    CGImageRef imageRef = [self.image CGImage];
-    NSUInteger width = CGImageGetWidth(imageRef);
-    NSUInteger height = CGImageGetHeight(imageRef);
-    
-    
-    VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
-    float ratioX = x/(float)width;
-    if(ratioX <= 0 || ratioX >= 1.0){
-        
-        [VWWThereminInputs touchscreenInput].x.muted = YES;
-    }
-    else{
-        [VWWThereminInputs touchscreenInput].x.muted = NO;
-    }
-    NSLog(@"ratioX:%f width:%d height:%d", ratioX, width, height);
-    float frequencyX = touchX.frequencyMax * ratioX;
-    [VWWThereminInputs touchscreenInput].x.frequency = frequencyX;
 
     
+    VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+    float frequencyX = touchX.frequencyMax * self.dot.point.x;
+    [VWWThereminInputs touchscreenInput].x.frequency = frequencyX;
+
     VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
-    float ratioY = y/(float)height;
-    if(ratioY <= 0 || ratioY >= 1.0){
+    float frequencyY = touchY.frequencyMax * (1.0 - self.dot.point.y);
+    [VWWThereminInputs touchscreenInput].y.frequency = frequencyY;
+    
+    // If we've gone off the view, mute both channels;
+    if(self.dot.point.x <= 0 || self.dot.point.x >= 1.0 ||
+       self.dot.point.y <= 0 || self.dot.point.y >= 1.0){
+        [VWWThereminInputs touchscreenInput].x.muted = YES;
         [VWWThereminInputs touchscreenInput].y.muted = YES;
     }
     else{
+        [VWWThereminInputs touchscreenInput].x.muted = NO;
         [VWWThereminInputs touchscreenInput].y.muted = NO;
-    };
+    }
+
     
-    NSLog(@"ratioY:%f width:%d height:%d", ratioY, width, height);
-    float frequencyY = touchY.frequencyMax * ratioY;
-    [VWWThereminInputs touchscreenInput].y.frequency = frequencyY;
     
+    
+    //NSLog(@"self.dot.point x:%f y:%f", self.dot.point.x, self.dot.point.y);
     
 }
 

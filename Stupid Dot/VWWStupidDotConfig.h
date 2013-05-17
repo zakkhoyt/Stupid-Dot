@@ -9,7 +9,7 @@
 #ifndef Stupid_Dot_VWWStupidDotConfig_h
 #define Stupid_Dot_VWWStupidDotConfig_h
 
-#define VWW_ONLY_ONE_SCANNER 1
+//#define VWW_ONLY_ONE_SCANNER 1
 
 
 

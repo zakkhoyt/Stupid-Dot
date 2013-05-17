@@ -10,7 +10,7 @@
 #import "VWWFileSystem.h"
 
 @interface VWWThereminInputs ()
-@property (nonatomic, strong) NSMutableDictionary* inputs;
+//@property (nonatomic, strong) NSMutableDictionary* inputs;
 @end
 
 @implementation VWWThereminInputs
@@ -47,6 +47,9 @@
 +(VWWThereminInput*)touchscreenInput{
     return ([self sharedInstance].inputs)[kKeyTouchScreen];
 }
+
+
+
 
 -(id)init{
     self = [super init];
