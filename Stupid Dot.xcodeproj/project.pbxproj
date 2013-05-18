@@ -56,6 +56,14 @@
 		C698D81A1745D08E00022CDF /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C698D8161745D08E00022CDF /* CAXException.cpp */; };
 		C698D81D1745D11800022CDF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C698D81B1745D11700022CDF /* AudioToolbox.framework */; };
 		C698D81E1745D11800022CDF /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C698D81C1745D11700022CDF /* CoreAudio.framework */; };
+		C6F214F9174718670073B8A3 /* VWWThereminInputSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F214F8174718670073B8A3 /* VWWThereminInputSettingsViewController.m */; };
+		C6F214FF174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F214FE174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.m */; };
+		C6F2150417471A120073B8A3 /* sawtooth_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6F2150017471A120073B8A3 /* sawtooth_256x256.png */; };
+		C6F2150517471A120073B8A3 /* sine_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6F2150117471A120073B8A3 /* sine_256x256.png */; };
+		C6F2150617471A120073B8A3 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6F2150217471A120073B8A3 /* square_256x256.png */; };
+		C6F2150717471A120073B8A3 /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6F2150317471A120073B8A3 /* triangle_256x256.png */; };
+		C6F2150A1747227D0073B8A3 /* VWWSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F215091747227D0073B8A3 /* VWWSlider.m */; };
+		C6F2150C174725280073B8A3 /* SliderBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C6F2150B174725280073B8A3 /* SliderBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +155,18 @@
 		C698D8171745D08E00022CDF /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
 		C698D81B1745D11700022CDF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C698D81C1745D11700022CDF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		C698D81F1746136B00022CDF /* inputs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = inputs.json; sourceTree = "<group>"; };
+		C6F214F7174718670073B8A3 /* VWWThereminInputSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInputSettingsViewController.h; sourceTree = "<group>"; };
+		C6F214F8174718670073B8A3 /* VWWThereminInputSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminInputSettingsViewController.m; sourceTree = "<group>"; };
+		C6F214FD174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInputSettingsWaveformTableViewCell.h; sourceTree = "<group>"; };
+		C6F214FE174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminInputSettingsWaveformTableViewCell.m; sourceTree = "<group>"; };
+		C6F2150017471A120073B8A3 /* sawtooth_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sawtooth_256x256.png; sourceTree = "<group>"; };
+		C6F2150117471A120073B8A3 /* sine_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sine_256x256.png; sourceTree = "<group>"; };
+		C6F2150217471A120073B8A3 /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square_256x256.png; sourceTree = "<group>"; };
+		C6F2150317471A120073B8A3 /* triangle_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_256x256.png; sourceTree = "<group>"; };
+		C6F215081747227D0073B8A3 /* VWWSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWSlider.h; path = view/VWWSlider.h; sourceTree = "<group>"; };
+		C6F215091747227D0073B8A3 /* VWWSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWSlider.m; path = view/VWWSlider.m; sourceTree = "<group>"; };
+		C6F2150B174725280073B8A3 /* SliderBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SliderBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +230,7 @@
 		C62F819B174451F9001A792A /* Stupid Dot */ = {
 			isa = PBXGroup;
 			children = (
+				C698D8211746137500022CDF /* json */,
 				C64DC6D317446EC7002CEE67 /* storyboards */,
 				C64DC6C817446BD9002CEE67 /* controller */,
 				C64DC6D217446EB2002CEE67 /* view */,
@@ -278,6 +299,11 @@
 		C62F81E317445453001A792A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C6F2150B174725280073B8A3 /* SliderBackground.png */,
+				C6F2150017471A120073B8A3 /* sawtooth_256x256.png */,
+				C6F2150117471A120073B8A3 /* sine_256x256.png */,
+				C6F2150217471A120073B8A3 /* square_256x256.png */,
+				C6F2150317471A120073B8A3 /* triangle_256x256.png */,
 				C603B6731744D39A00585877 /* maze_05.jpg */,
 				C603B6741744D39A00585877 /* maze_06.jpg */,
 				C603B6751744D39A00585877 /* maze_07.jpg */,
@@ -301,6 +327,10 @@
 				C64DC6CC17446BD9002CEE67 /* VWWViewController.m */,
 				C64DC6C917446BD9002CEE67 /* VWWImagePopoverViewController.h */,
 				C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */,
+				C6F214F7174718670073B8A3 /* VWWThereminInputSettingsViewController.h */,
+				C6F214F8174718670073B8A3 /* VWWThereminInputSettingsViewController.m */,
+				C6F214FD174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.h */,
+				C6F214FE174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -312,6 +342,8 @@
 				C64DC6D017446EAB002CEE67 /* VWWImageView.m */,
 				C603B6701744943700585877 /* VWWScannerView.h */,
 				C603B6711744943700585877 /* VWWScannerView.m */,
+				C6F215081747227D0073B8A3 /* VWWSlider.h */,
+				C6F215091747227D0073B8A3 /* VWWSlider.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -370,6 +402,14 @@
 				C698D8171745D08E00022CDF /* CAXException.h */,
 			);
 			path = "Apple CA Helpers";
+			sourceTree = "<group>";
+		};
+		C698D8211746137500022CDF /* json */ = {
+			isa = PBXGroup;
+			children = (
+				C698D81F1746136B00022CDF /* inputs.json */,
+			);
+			name = json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +502,11 @@
 				C603B67E1744D39A00585877 /* maze_09.jpg in Resources */,
 				C603B67F1744D39A00585877 /* maze_10.jpg in Resources */,
 				C603B6801744D39A00585877 /* maze_11.jpg in Resources */,
+				C6F2150417471A120073B8A3 /* sawtooth_256x256.png in Resources */,
+				C6F2150517471A120073B8A3 /* sine_256x256.png in Resources */,
+				C6F2150617471A120073B8A3 /* square_256x256.png in Resources */,
+				C6F2150717471A120073B8A3 /* triangle_256x256.png in Resources */,
+				C6F2150C174725280073B8A3 /* SliderBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +562,9 @@
 				C698D8181745D08E00022CDF /* CADebugMacros.cpp in Sources */,
 				C698D8191745D08E00022CDF /* CAStreamBasicDescription.cpp in Sources */,
 				C698D81A1745D08E00022CDF /* CAXException.cpp in Sources */,
+				C6F214F9174718670073B8A3 /* VWWThereminInputSettingsViewController.m in Sources */,
+				C6F214FF174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.m in Sources */,
+				C6F2150A1747227D0073B8A3 /* VWWSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

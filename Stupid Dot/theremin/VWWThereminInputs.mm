@@ -54,22 +54,67 @@
 -(id)init{
     self = [super init];
     if(self){
-        [self initializeClass];
+        [self initializeClassRandomly:NO];
     }
     return self;
 }
 
--(void)initializeClass{
+-(id)initRandomly{
+    self = [super init];
+    if(self){
+        [self initializeClassRandomly:YES];
+    }
+    return self;
+}
+
+-(void)initializeClassRandomly:(BOOL)random{
     _inputs = [[NSMutableDictionary alloc]init];
-        
-    // If the config file exists, load it. If not, go ahead and write our default values as a file and move on.
-    if([VWWFileSystem configFileExists]){
-        [self loadFile];
+    
+    if(random){
+        [self randomlyGenerateInputs];
     }
     else{
-        [self createAndSaveNewInputs];
+        // If the config file exists, load it. If not, go ahead and write our default values as a file and move on.
+        if([VWWFileSystem configFileExists]){
+            [self loadFile];
+        }
+        else{
+            [self createAndSaveNewInputs];
+        }
     }
 }
+
+-(float)randomFloatMinimum:(NSInteger)minimum maximum:(NSInteger)maximum{
+    NSInteger range = maximum - minimum;
+    float r = rand();
+    return range * r + minimum;
+    
+}
+
+//-(WaveType)randomWaveType{
+//    NSInteger range = 4 - 0;
+//    float r = rand();
+//    NSInteger  range * r + 0;
+//}
+
+-(void)randomlyGenerateInputs{
+
+    VWWThereminInputAxis *x = [[VWWThereminInputAxis alloc]init];
+    x.sensitivity = 1.0;
+    x.frequencyMin = [self randomFloatMinimum:VWW_FREQUENCY_MIN maximum:VWW_FREQUENCY_MAX];
+    x.frequencyMax = [self randomFloatMinimum:VWW_FREQUENCY_MIN maximum:VWW_FREQUENCY_MAX];
+    x.muted = YES;
+    x.waveType = kWaveSin;
+    x.effectType = kEffectNone;
+    x.amplitude = 1.0;
+    
+//    VWWThereminInput* input = [[VWWThereminInput alloc]initWithDictionary:dict];
+//    (self.inputs)[input.description] = input;
+//    
+//    NSLog(@"self json = %@", self.jsonRepresentation);
+}
+
+
 
 -(void)createAndSaveNewInputs{
     VWWThereminInput* touchInput = [[VWWThereminInput alloc]initWithType:kInputTouch];
