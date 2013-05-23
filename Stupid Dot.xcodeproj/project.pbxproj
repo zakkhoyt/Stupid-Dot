@@ -50,6 +50,7 @@
 		C69377FD174E965E006FBAB8 /* icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C69377FC174E965E006FBAB8 /* icon_114x114.png */; };
 		C6937800174E997E006FBAB8 /* VWWScannerImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C69377FF174E997E006FBAB8 /* VWWScannerImage.m */; };
 		C6937802174EA19B006FBAB8 /* color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6937801174EA19B006FBAB8 /* color.jpg */; };
+		C6937804174EA3C6006FBAB8 /* distribute.html in Resources */ = {isa = PBXBuildFile; fileRef = C6937803174EA3C5006FBAB8 /* distribute.html */; };
 		C698D8081745CFD100022CDF /* VWWThereminNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FA1745CFD100022CDF /* VWWThereminNotes.m */; };
 		C698D8091745CFD100022CDF /* VWWThereminSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FC1745CFD100022CDF /* VWWThereminSynthesizer.mm */; };
 		C698D80A1745CFD100022CDF /* VWWFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FF1745CFD100022CDF /* VWWFileSystem.m */; };
@@ -141,6 +142,7 @@
 		C69377FE174E997E006FBAB8 /* VWWScannerImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScannerImage.h; sourceTree = "<group>"; };
 		C69377FF174E997E006FBAB8 /* VWWScannerImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerImage.m; sourceTree = "<group>"; };
 		C6937801174EA19B006FBAB8 /* color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color.jpg; sourceTree = "<group>"; };
+		C6937803174EA3C5006FBAB8 /* distribute.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = distribute.html; sourceTree = "<group>"; };
 		C698D7F51745CB9F00022CDF /* VWWStupidDotConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWStupidDotConfig.h; sourceTree = "<group>"; };
 		C698D7F81745CFD100022CDF /* VWWThereminMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMath.h; sourceTree = "<group>"; };
 		C698D7F91745CFD100022CDF /* VWWThereminNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminNotes.h; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		C62F819B174451F9001A792A /* Stupid Dot */ = {
 			isa = PBXGroup;
 			children = (
+				C6937803174EA3C5006FBAB8 /* distribute.html */,
 				C698D8211746137500022CDF /* json */,
 				C64DC6D317446EC7002CEE67 /* storyboards */,
 				C64DC6C817446BD9002CEE67 /* controller */,
@@ -343,8 +346,8 @@
 		C64DC6C817446BD9002CEE67 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				C64DC6CB17446BD9002CEE67 /* VWWViewController.h */,
 				C64DC6CC17446BD9002CEE67 /* VWWViewController.m */,
+				C64DC6CB17446BD9002CEE67 /* VWWViewController.h */,
 				C64DC6C917446BD9002CEE67 /* VWWImagePopoverViewController.h */,
 				C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */,
 				C6F214F7174718670073B8A3 /* VWWThereminInputSettingsViewController.h */,
@@ -532,6 +535,7 @@
 				C69377FB174E9658006FBAB8 /* icon_57x57.png in Resources */,
 				C69377FD174E965E006FBAB8 /* icon_114x114.png in Resources */,
 				C6937802174EA19B006FBAB8 /* color.jpg in Resources */,
+				C6937804174EA3C6006FBAB8 /* distribute.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
