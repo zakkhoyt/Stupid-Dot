@@ -47,7 +47,7 @@
             [scanner.dot.fillColor getRed:&red green:&green blue:&blue alpha:&alpha];
             CGFloat fillColor[4] = {red, green, blue, alpha};
             CGContextSetFillColor(cgContext, fillColor);
-            CGContextFillEllipseInRect(cgContext, CGRectMake(x, y, scanner.dot.radius, scanner.dot.radius));
+            CGContextFillEllipseInRect(cgContext, CGRectMake(x-(scanner.dot.radius/2.0), y-(scanner.dot.radius/2.0), scanner.dot.radius, scanner.dot.radius));
         }
         
         {
@@ -55,8 +55,16 @@
             [scanner.dot.borderColor getRed:&red green:&green blue:&blue alpha:&alpha];
             CGFloat borderColor[4] = {red, green, blue, alpha};
             CGContextSetStrokeColor(cgContext, borderColor);
-            CGContextStrokeEllipseInRect(cgContext, CGRectMake(x, y, scanner.dot.radius, scanner.dot.radius));
+            CGContextStrokeEllipseInRect(cgContext, CGRectMake(x-(scanner.dot.radius/2.0), y-(scanner.dot.radius/2.0), scanner.dot.radius, scanner.dot.radius));
             
+        }
+        
+        {
+            // Draw color at dot (filled) as half of the radiis
+            [scanner.colorAtDot getRed:&red green:&green blue:&blue alpha:&alpha];
+            CGFloat fillColor[4] = {red, green, blue, alpha};
+            CGContextSetFillColor(cgContext, fillColor);
+            CGContextFillEllipseInRect(cgContext, CGRectMake(x-(scanner.dot.radius/4.0), y-(scanner.dot.radius/4.0) , scanner.dot.radius/2.0, scanner.dot.radius/2.0));
         }
         CGContextDrawPath(cgContext,kCGPathStroke);
     

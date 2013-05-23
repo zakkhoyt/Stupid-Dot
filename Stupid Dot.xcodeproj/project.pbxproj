@@ -44,6 +44,12 @@
 		C64DC6CD17446BD9002CEE67 /* VWWImagePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */; };
 		C64DC6CE17446BD9002CEE67 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CC17446BD9002CEE67 /* VWWViewController.m */; };
 		C64DC6D117446EAB002CEE67 /* VWWImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6D017446EAB002CEE67 /* VWWImageView.m */; };
+		C69377F7174E964A006FBAB8 /* icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = C69377F6174E964A006FBAB8 /* icon_72x72.png */; };
+		C69377F9174E9650006FBAB8 /* icon_144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = C69377F8174E9650006FBAB8 /* icon_144x144.png */; };
+		C69377FB174E9658006FBAB8 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C69377FA174E9658006FBAB8 /* icon_57x57.png */; };
+		C69377FD174E965E006FBAB8 /* icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C69377FC174E965E006FBAB8 /* icon_114x114.png */; };
+		C6937800174E997E006FBAB8 /* VWWScannerImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C69377FF174E997E006FBAB8 /* VWWScannerImage.m */; };
+		C6937802174EA19B006FBAB8 /* color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6937801174EA19B006FBAB8 /* color.jpg */; };
 		C698D8081745CFD100022CDF /* VWWThereminNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FA1745CFD100022CDF /* VWWThereminNotes.m */; };
 		C698D8091745CFD100022CDF /* VWWThereminSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FC1745CFD100022CDF /* VWWThereminSynthesizer.mm */; };
 		C698D80A1745CFD100022CDF /* VWWFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C698D7FF1745CFD100022CDF /* VWWFileSystem.m */; };
@@ -128,6 +134,13 @@
 		C64DC6CC17446BD9002CEE67 /* VWWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
 		C64DC6CF17446EAB002CEE67 /* VWWImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWImageView.h; path = view/VWWImageView.h; sourceTree = "<group>"; };
 		C64DC6D017446EAB002CEE67 /* VWWImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWImageView.m; path = view/VWWImageView.m; sourceTree = "<group>"; };
+		C69377F6174E964A006FBAB8 /* icon_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_72x72.png; sourceTree = "<group>"; };
+		C69377F8174E9650006FBAB8 /* icon_144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_144x144.png; sourceTree = "<group>"; };
+		C69377FA174E9658006FBAB8 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57x57.png; sourceTree = "<group>"; };
+		C69377FC174E965E006FBAB8 /* icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_114x114.png; sourceTree = "<group>"; };
+		C69377FE174E997E006FBAB8 /* VWWScannerImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScannerImage.h; sourceTree = "<group>"; };
+		C69377FF174E997E006FBAB8 /* VWWScannerImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScannerImage.m; sourceTree = "<group>"; };
+		C6937801174EA19B006FBAB8 /* color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color.jpg; sourceTree = "<group>"; };
 		C698D7F51745CB9F00022CDF /* VWWStupidDotConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWStupidDotConfig.h; sourceTree = "<group>"; };
 		C698D7F81745CFD100022CDF /* VWWThereminMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMath.h; sourceTree = "<group>"; };
 		C698D7F91745CFD100022CDF /* VWWThereminNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminNotes.h; sourceTree = "<group>"; };
@@ -198,6 +211,10 @@
 		C62F8189174451F9001A792A = {
 			isa = PBXGroup;
 			children = (
+				C69377FC174E965E006FBAB8 /* icon_114x114.png */,
+				C69377FA174E9658006FBAB8 /* icon_57x57.png */,
+				C69377F8174E9650006FBAB8 /* icon_144x144.png */,
+				C69377F6174E964A006FBAB8 /* icon_72x72.png */,
 				C62F819B174451F9001A792A /* Stupid Dot */,
 				C62F81C2174451FA001A792A /* Stupid DotTests */,
 				C62F8194174451F9001A792A /* Frameworks */,
@@ -291,6 +308,8 @@
 				C62F81D91744521B001A792A /* VWWScannerLine.m */,
 				C62F81DC1744521B001A792A /* VWWScannerVector.h */,
 				C62F81DD1744521B001A792A /* VWWScannerVector.m */,
+				C69377FE174E997E006FBAB8 /* VWWScannerImage.h */,
+				C69377FF174E997E006FBAB8 /* VWWScannerImage.m */,
 			);
 			name = scanner;
 			path = Scanner;
@@ -299,6 +318,7 @@
 		C62F81E317445453001A792A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C6937801174EA19B006FBAB8 /* color.jpg */,
 				C6F2150B174725280073B8A3 /* SliderBackground.png */,
 				C6F2150017471A120073B8A3 /* sawtooth_256x256.png */,
 				C6F2150117471A120073B8A3 /* sine_256x256.png */,
@@ -507,6 +527,11 @@
 				C6F2150617471A120073B8A3 /* square_256x256.png in Resources */,
 				C6F2150717471A120073B8A3 /* triangle_256x256.png in Resources */,
 				C6F2150C174725280073B8A3 /* SliderBackground.png in Resources */,
+				C69377F7174E964A006FBAB8 /* icon_72x72.png in Resources */,
+				C69377F9174E9650006FBAB8 /* icon_144x144.png in Resources */,
+				C69377FB174E9658006FBAB8 /* icon_57x57.png in Resources */,
+				C69377FD174E965E006FBAB8 /* icon_114x114.png in Resources */,
+				C6937802174EA19B006FBAB8 /* color.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +590,7 @@
 				C6F214F9174718670073B8A3 /* VWWThereminInputSettingsViewController.m in Sources */,
 				C6F214FF174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.m in Sources */,
 				C6F2150A1747227D0073B8A3 /* VWWSlider.m in Sources */,
+				C6937800174E997E006FBAB8 /* VWWScannerImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,9 +714,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
 				INFOPLIST_FILE = "Stupid Dot/Stupid Dot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C0F526BF-5C72-4AA1-8417-238646436B2C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C0F526BF-5C72-4AA1-8417-238646436B2C";
+				PROVISIONING_PROFILE = "083ECB2E-1838-4CA1-9EE4-30E013F34477";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "083ECB2E-1838-4CA1-9EE4-30E013F34477";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -703,9 +730,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stupid Dot/Stupid Dot-Prefix.pch";
 				INFOPLIST_FILE = "Stupid Dot/Stupid Dot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C0F526BF-5C72-4AA1-8417-238646436B2C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C0F526BF-5C72-4AA1-8417-238646436B2C";
+				PROVISIONING_PROFILE = "083ECB2E-1838-4CA1-9EE4-30E013F34477";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "083ECB2E-1838-4CA1-9EE4-30E013F34477";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -93,6 +93,8 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
         vc.completion = ^(NSString *imageName){
             UIImage *image = [UIImage imageNamed:imageName];
             [self.imageView setImage:image];
+            
+            [self.scannerController setImage:nil];
             [self.scannerController setImage:image];
 
             if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){

@@ -37,7 +37,8 @@
                    @"maze_06.jpg",
                    @"maze_07.jpg",
                    @"maze_08.jpg",
-                   @"maze_09.jpg"]
+                   @"maze_09.jpg",
+                   @"color.jpg"]
                    mutableCopy];
 }
 

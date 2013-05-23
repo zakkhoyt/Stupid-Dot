@@ -7,8 +7,8 @@
 //
 
 #import "VWWScannerController.h"
+#import "VWWScannerImage.h"
 #import "VWWThereminInputs.h"
-
 
 @interface VWWScannerController ()
 @property (nonatomic, strong) NSMutableArray *scanners;
@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic) float framesPerSecond;
+@property (nonatomic, strong) VWWScannerImage *scannerImage;
 @end
 
 @implementation VWWScannerController
@@ -36,15 +37,15 @@
         _scanners = [@[]mutableCopy];
         _scannerQueue = dispatch_queue_create("com.vaporwarewolf.stupiddot.scanner", NULL);
 
-        // Configure inputs from settings file (or create default)
-        [VWWThereminInputs sharedInstance];
-
-        // TODO: move this config to a screen of some sort. 
-        VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
-        touchX.waveType = kWaveSawtooth;
-
-        VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
-        touchY.waveType = kWaveSquare;
+//        // Configure inputs from settings file (or create default)
+//        [VWWThereminInputs sharedInstance];
+//
+//        // TODO: move this config to a screen of some sort. 
+//        VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+//        touchX.waveType = kWaveSawtooth;
+//
+//        VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
+//        touchY.waveType = kWaveSquare;
 
     }
     return self;
@@ -62,7 +63,7 @@
         for(NSInteger index = 0; index < self.scanners.count; index++){
             VWWScanner *scanner = self.scanners[index];
             // Update scanners with current info.
-            scanner.image = self.image;
+            scanner.scannerImage = self.scannerImage;
             
             [scanner process];
         }
@@ -80,8 +81,13 @@
 
 #pragma mark Public methods
 
--(void)setImage:(UIImage*)image viewSize:(CGSize)viewSize{
-    _image = image;
+-(void)setImage:(UIImage*)image{
+    if(image == nil){
+        _scannerImage = nil;
+    }
+    else{
+        _scannerImage = [[VWWScannerImage alloc]initWithImage:image];
+    }
 }
 
 -(void)addScanner:(VWWScanner*)scanner{
