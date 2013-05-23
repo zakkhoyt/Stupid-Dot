@@ -8,28 +8,29 @@
 
 #import "VWWScannerImage.h"
 
-@interface VWWScannerImage (){
-    UIImage         *_image;
-    CGImageRef      _imageRef;
-    NSUInteger      _width;
-    NSUInteger      _height;
-    CGColorSpaceRef _colorSpace;
-    unsigned char   *_rawData;
-    NSUInteger      _bytesPerPixel;
-    NSUInteger      _bytesPerRow;
-    NSUInteger      _bitsPerComponent;
-    CGContextRef    _context;
-}
-//@property (nonatomic, strong) UIImage *image;
-//@property (nonatomic) CGImageRef imageRef;
-//@property (nonatomic) NSUInteger width;
-//@property (nonatomic) NSUInteger height;
-//@property (nonatomic) CGColorSpaceRef colorSpace;
-//@property (nonatomic) unsigned char *rawData;
-//@property (nonatomic) NSUInteger bytesPerPixel;
-//@property (nonatomic) NSUInteger bytesPerRow;
-//@property (nonatomic) NSUInteger bitsPerComponent;
-//@property (nonatomic) CGContextRef context;
+@interface VWWScannerImage ()
+//{
+//    UIImage         *self.image;
+//    CGImageRef      self.imageRef;
+//    NSUInteger      self.width;
+//    NSUInteger      self.height;
+//    CGColorSpaceRef self.colorSpace;
+//    unsigned char   *self.rawData;
+//    NSUInteger      self.bytesPerPixel;
+//    NSUInteger      self.bytesPerRow;
+//    NSUInteger      self.bitsPerComponent;
+//    CGContextRef    self.context;
+//}
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic) CGImageRef imageRef;
+@property (nonatomic) NSUInteger width;
+@property (nonatomic) NSUInteger height;
+@property (nonatomic) CGColorSpaceRef colorSpace;
+@property (nonatomic) unsigned char *rawData;
+@property (nonatomic) NSUInteger bytesPerPixel;
+@property (nonatomic) NSUInteger bytesPerRow;
+@property (nonatomic) NSUInteger bitsPerComponent;
+@property (nonatomic) CGContextRef context;
 @end
 
 @implementation VWWScannerImage
@@ -46,7 +47,7 @@
 }
 
 -(void)dealloc{
-    free(_rawData);
+    free(self.rawData);
 }
 
 
@@ -95,17 +96,17 @@
 
 - (UIColor*)colorFromImageAtX:(float)x andY:(float)y{
 
-    CGFloat xPixel = _width * x;
-    CGFloat yPixel = _height * y;
-    NSLog(@"Looking for X pixel %f/%d", xPixel, _width);
-    NSLog(@"Looking for Y pixel %f/%d", yPixel, _height);
+    NSInteger xPixel = self.width * x;
+    NSInteger yPixel = self.height * y;
+    NSLog(@"Looking for X pixel %d/%d", xPixel, self.width);
+    NSLog(@"Looking for Y pixel %d/%d", yPixel, self.height);
     
     // Now your rawData contains the image data in the RGBA8888 pixel format.
-    int byteIndex = (_bytesPerRow * yPixel) + xPixel * _bytesPerPixel;
-    CGFloat red   = (_rawData[byteIndex]     * 1.0) / 255.0;
-    CGFloat green = (_rawData[byteIndex + 1] * 1.0) / 255.0;
-    CGFloat blue  = (_rawData[byteIndex + 2] * 1.0) / 255.0;
-    CGFloat alpha = (_rawData[byteIndex + 3] * 1.0) / 255.0;
+    int byteIndex = (self.bytesPerRow * yPixel) + xPixel * self.bytesPerPixel;
+    CGFloat red   = (self.rawData[byteIndex]     * 1.0) / 255.0;
+    CGFloat green = (self.rawData[byteIndex + 1] * 1.0) / 255.0;
+    CGFloat blue  = (self.rawData[byteIndex + 2] * 1.0) / 255.0;
+    CGFloat alpha = (self.rawData[byteIndex + 3] * 1.0) / 255.0;
     byteIndex += 4;
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
@@ -117,21 +118,21 @@
     
     _image = image;
     
-    _imageRef = [_image CGImage];
-    _width = CGImageGetWidth(_imageRef);
-    _height = CGImageGetHeight(_imageRef);
-    _colorSpace = CGColorSpaceCreateDeviceRGB();
-    _rawData = (unsigned char*) calloc(_height * _width * 4, sizeof(unsigned char));
-    _bytesPerPixel = 4;
-    _bytesPerRow = _bytesPerPixel * _width;
-    _bitsPerComponent = 8;
-    _context = CGBitmapContextCreate(_rawData, _width, _height,
-                                         _bitsPerComponent, _bytesPerRow, _colorSpace,
+    self.imageRef = [self.image CGImage];
+    self.width = CGImageGetWidth(self.imageRef);
+    self.height = CGImageGetHeight(self.imageRef);
+    self.colorSpace = CGColorSpaceCreateDeviceRGB();
+    self.rawData = (unsigned char*) calloc(self.height * self.width * 4, sizeof(unsigned char));
+    self.bytesPerPixel = 4;
+    self.bytesPerRow = self.bytesPerPixel * self.width;
+    self.bitsPerComponent = 8;
+    self.context = CGBitmapContextCreate(self.rawData, self.width, self.height,
+                                         self.bitsPerComponent, self.bytesPerRow, self.colorSpace,
                                          kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
     
-    CGColorSpaceRelease(_colorSpace);
-    CGContextDrawImage(_context, CGRectMake(0, 0, _width, _height), _imageRef);
-    CGContextRelease(_context);
+    CGColorSpaceRelease(self.colorSpace);
+    CGContextDrawImage(self.context, CGRectMake(0, 0, self.width, self.height), self.imageRef);
+    CGContextRelease(self.context);
 }
 
 

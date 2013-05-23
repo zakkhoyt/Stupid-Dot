@@ -37,15 +37,15 @@
         _scanners = [@[]mutableCopy];
         _scannerQueue = dispatch_queue_create("com.vaporwarewolf.stupiddot.scanner", NULL);
 
-//        // Configure inputs from settings file (or create default)
-//        [VWWThereminInputs sharedInstance];
-//
-//        // TODO: move this config to a screen of some sort. 
-//        VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
-//        touchX.waveType = kWaveSawtooth;
-//
-//        VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
-//        touchY.waveType = kWaveSquare;
+        // Configure inputs from settings file (or create default)
+        [VWWThereminInputs sharedInstance];
+
+        // TODO: move this config to a screen of some sort. 
+        VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+        touchX.waveType = kWaveSawtooth;
+
+        VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
+        touchY.waveType = kWaveSquare;
 
     }
     return self;

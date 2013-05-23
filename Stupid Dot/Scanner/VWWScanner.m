@@ -177,7 +177,7 @@
 //        NSLog(@"colorAtDot = %@", self.colorAtDot);
     }
     
-    //[self processThereminFrequenciesFromPoint];
+    [self processThereminFrequenciesFromPoint];
     
     self.date = [NSDate date];
 }
