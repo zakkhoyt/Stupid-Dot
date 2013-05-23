@@ -1,0 +1,38 @@
+
+
+
+For a new dot settings screen
+
+
+* scanning
+    * bounce off of objects
+    * follow objects
+
+* audio
+    * tone changes dependent on position of x & y axis
+        * x
+            * f_min
+            * f_max
+            * waveform
+            * amplitude
+            * effect
+        * y
+            * f_min
+            * f_max
+            * waveform
+            * amplitude
+            * effect
+    * tone changes by how long since last "bounce"
+            * f_base
+            * waveform
+            * amplitude
+            * effect
+    * tone chnnges on point color (black being f_min, white being f_max
+        * select color for min
+            * f_min
+        * select color for max
+            * f_max
+        * waveform
+        * amplitude
+        * effect
+
