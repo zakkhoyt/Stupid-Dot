@@ -11,10 +11,14 @@
 #import "VWWScannerController.h"
 #import "VWWImageView.h"
 #import "VWWScannerView.h"
-
+#import "VWWDotsTableViewController.h"
+#import "VWWScannerAudioSettingsViewController.h"
+#import "VWWScannerVisualSettingsViewController.h"
 
 static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
-
+static NSString *kSegueMainToDotsPopover = @"segueMainToDotsPopover";
+static NSString *kSegueMainToAudioSettings = @"segueMainToAudioSettings";
+static NSString *kSegueMainToVisualSettings = @"segueMainToVisualSettings";
 
 @interface VWWViewController ()
 // GUI stuff
@@ -35,6 +39,8 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
 //    [self addGestureRecognizers];
     _scannerController = [[VWWScannerController alloc]init];
     
@@ -104,6 +110,32 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
                 [self dismissViewControllerAnimated:YES completion:^{}];
             }
         };
+        
+    
+    }
+    else if([segue.identifier isEqualToString:kSegueMainToDotsPopover]){
+        VWWDotsTableViewController *vc = segue.destinationViewController;
+        vc.scannerController = self.scannerController;
+        vc.audioBlock = ^(VWWScanner *scanner){
+            [self.popoverViewController dismissPopoverAnimated:YES];
+            [self performSegueWithIdentifier:kSegueMainToAudioSettings sender:self];
+        };
+        vc.visualBlock = ^(VWWScanner *scanner){
+            [self.popoverViewController dismissPopoverAnimated:YES];
+            [self performSegueWithIdentifier:kSegueMainToVisualSettings sender:self];
+        };
+    }
+    else if([segue.identifier isEqualToString:kSegueMainToAudioSettings]){
+        VWWScannerAudioSettingsViewController *vc = segue.destinationViewController;
+        vc.doneBlock = ^(){
+            [self dismissViewControllerAnimated:YES completion:^{}];
+        };
+    }
+    else if([segue.identifier isEqualToString:kSegueMainToVisualSettings]){
+        VWWScannerVisualSettingsViewController *vc = segue.destinationViewController;
+        vc.doneBlock = ^(){
+            [self dismissViewControllerAnimated:YES completion:^{}];
+        };
     }
 }
 
@@ -138,6 +170,9 @@ static NSString *kSegueMainToImagePopover = @"segueMainToImagePopover";
     [self.scannerController removeAllScanners];
 }
 
+- (IBAction)editDotsButton:(id)sender {
+    [self performSegueWithIdentifier:kSegueMainToDotsPopover sender:self];
+}
 
 
 @end

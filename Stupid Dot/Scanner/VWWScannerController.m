@@ -81,6 +81,10 @@
 
 #pragma mark Public methods
 
+-(NSArray*)allScanners{
+    return self.scanners;
+}
+
 -(void)setImage:(UIImage*)image{
     if(image == nil){
         _scannerImage = nil;

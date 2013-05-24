@@ -17,12 +17,15 @@ typedef void (^VWWScannerControllerRenderScannersBlock)(NSArray *scanners);
 
 @property (nonatomic, strong) VWWScannerControllerRenderScannersBlock renderScannersBlock;
 
+
 +(VWWScannerController*)sharedInstance;
 -(void)setImage:(UIImage*)image;
 -(void)addScanner:(VWWScanner*)scanner;
+-(NSArray*)allScanners;
 -(void)printScanners;
 -(void)removeScanner:(VWWScanner*)scanner;
 -(void)removeAllScanners;
+
 -(void)startProcessing;
 -(void)stopProcessing;
 -(void)startAllScanners;
