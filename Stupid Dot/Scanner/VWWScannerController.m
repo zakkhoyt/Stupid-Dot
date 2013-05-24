@@ -10,6 +10,8 @@
 #import "VWWScannerImage.h"
 #import "VWWThereminInputs.h"
 
+
+
 @interface VWWScannerController ()
 @property (nonatomic, strong) NSMutableArray *scanners;
 @property (nonatomic) dispatch_queue_t scannerQueue;
@@ -35,17 +37,7 @@
     if(self){
         _framesPerSecond = 60.0;
         _scanners = [@[]mutableCopy];
-        _scannerQueue = dispatch_queue_create("com.vaporwarewolf.stupiddot.scanner", NULL);
-
-        // Configure inputs from settings file (or create default)
-        [VWWThereminInputs sharedInstance];
-
-        // TODO: move this config to a screen of some sort. 
-        VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
-        touchX.waveType = kWaveSawtooth;
-
-        VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
-        touchY.waveType = kWaveSquare;
+        _scannerQueue = dispatch_queue_create("com.vaporwarewolf.stupiddot.scanner", NULL);        
 
     }
     return self;

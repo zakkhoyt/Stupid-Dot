@@ -242,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScanner.m"
-         timestampString = "391028420.995097"
+         timestampString = "391055982.77733"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "189"
-         endingLineNumber = "189"
+         startingLineNumber = "214"
+         endingLineNumber = "214"
          landmarkName = "-processThereminFrequenciesFromPoint"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScanner.m"
-         timestampString = "391028420.995097"
+         timestampString = "391055982.77733"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "193"
-         endingLineNumber = "193"
+         startingLineNumber = "218"
+         endingLineNumber = "218"
          landmarkName = "-processThereminFrequenciesFromPoint"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScanner.m"
-         timestampString = "391028420.995097"
+         timestampString = "391055982.77733"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "194"
-         endingLineNumber = "194"
+         startingLineNumber = "219"
+         endingLineNumber = "219"
          landmarkName = "-processThereminFrequenciesFromPoint"
          landmarkType = "5">
       </FileBreakpoint>
@@ -307,11 +307,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScannerController.m"
-         timestampString = "391043170.988078"
+         timestampString = "391054259.315714"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
          landmarkName = "-stopAllScanners"
          landmarkType = "5">
       </FileBreakpoint>
@@ -320,11 +320,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Stupid Dot/Scanner/VWWScannerController.m"
-         timestampString = "391043170.988078"
+         timestampString = "391054259.315714"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "132"
-         endingLineNumber = "132"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
          landmarkName = "-stopAllScanners"
          landmarkType = "5">
       </FileBreakpoint>

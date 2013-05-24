@@ -174,10 +174,35 @@
     
     if(self.scannerImage){
         self.colorAtDot = [self.scannerImage colorFromImageAtX:nextPoint.x andY:nextPoint.y];
-//        NSLog(@"colorAtDot = %@", self.colorAtDot);
+
+        float red, green, blue, alpha = 0;
+        [self.colorAtDot getRed:&red green:&green blue:&blue alpha:&alpha];
+        
+    
+        VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+        VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
+        
+        
+//        // By position
+//        float frequencyX = touchX.frequencyMax * self.dot.point.x;
+//        float frequencyY = touchY.frequencyMax * (1.0 - self.dot.point.y);
+ 
+        // By red and green
+        float frequencyX = touchX.frequencyMax * red;
+        float frequencyY = touchY.frequencyMax * 1.333333 * green;
+        
+        
+        
+        
+        
+        
+        touchX.muted = NO;
+        touchY.muted = NO;
+        [VWWThereminInputs touchscreenInput].x.frequency = frequencyX;
+        [VWWThereminInputs touchscreenInput].y.frequency = frequencyY;
     }
     
-    [self processThereminFrequenciesFromPoint];
+    //[self processThereminFrequenciesFromPoint];
     
     self.date = [NSDate date];
 }

@@ -351,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiD-DU-Jtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="2336"/>
+            <point key="canvasLocation" x="3291" y="-1326"/>
         </scene>
         <!--Scanner Visual Settings View Controller-->
         <scene sceneID="rwB-TN-bD6">
@@ -420,13 +420,26 @@
                                     <action selector="doneButtonTouchUpInside:" destination="otQ-On-AjB" eventType="touchUpInside" id="YwT-I2-KOs"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7o6-4H-VrU" customClass="VWWSlider">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" type="user" id="9eO-kx-LH2"/>
+                                    <constraint firstAttribute="width" constant="80" type="user" id="ENt-sJ-QDS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="580" type="user" id="Lc3-3N-m6e"/>
+                                    <constraint firstAttribute="height" constant="580" type="user" id="VNt-kv-iJ4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KEe-br-Qa9" firstAttribute="centerX" secondItem="Ueb-1k-48x" secondAttribute="centerX" type="default" id="2Mv-MN-dKd"/>
                             <constraint firstItem="KEe-br-Qa9" firstAttribute="top" secondItem="Ueb-1k-48x" secondAttribute="top" constant="20" symbolic="YES" type="default" id="WAr-fo-MPP"/>
-                            <constraint firstItem="BJO-eZ-l5e" firstAttribute="top" secondItem="Ueb-1k-48x" secondAttribute="top" constant="20" symbolic="YES" type="default" id="oH9-zG-XUC"/>
+                            <constraint firstItem="7o6-4H-VrU" firstAttribute="leading" secondItem="Ueb-1k-48x" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="YCK-5Y-5le"/>
+                            <constraint firstItem="7o6-4H-VrU" firstAttribute="top" secondItem="BJO-eZ-l5e" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="naU-om-ojv"/>
+                            <constraint firstItem="BJO-eZ-l5e" firstAttribute="top" secondItem="Ueb-1k-48x" secondAttribute="top" constant="20" symbolic="YES" type="user" id="oH9-zG-XUC"/>
+                            <constraint firstAttribute="trailing" secondItem="7o6-4H-VrU" secondAttribute="trailing" priority="1" constant="668" type="user" id="pEh-Ds-pjA"/>
                             <constraint firstItem="BJO-eZ-l5e" firstAttribute="leading" secondItem="Ueb-1k-48x" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pPz-go-J27"/>
+                            <constraint firstAttribute="bottom" secondItem="7o6-4H-VrU" secondAttribute="bottom" priority="1" constant="353" type="user" id="vyi-hD-zJg"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -448,6 +461,9 @@
         <class className="VWWDotsTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWDotsTableViewCell.h"/>
             <relationships>
+                <relationship kind="action" name="audioButtonTouchUpInside:"/>
+                <relationship kind="action" name="muteSwitchValueChanged:"/>
+                <relationship kind="action" name="visualButtonTouchUpInside:"/>
                 <relationship kind="outlet" name="dotView" candidateClass="VWWDotView"/>
                 <relationship kind="outlet" name="muteSwitch" candidateClass="SMSwitch"/>
             </relationships>
@@ -498,9 +514,6 @@
         <class className="VWWViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWViewController.h"/>
             <relationships>
-                <relationship kind="action" name="editDotsButton:"/>
-                <relationship kind="action" name="loadImageButtonTouchUpInside:"/>
-                <relationship kind="action" name="removeAllButtonTouchUpInside:"/>
                 <relationship kind="outlet" name="imageView" candidateClass="VWWImageView"/>
                 <relationship kind="outlet" name="loadImageButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="scannerView" candidateClass="VWWScannerView"/>
