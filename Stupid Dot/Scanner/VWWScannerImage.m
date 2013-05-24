@@ -85,6 +85,8 @@
     CGColorSpaceRelease(self.colorSpace);
     CGContextDrawImage(self.context, CGRectMake(0, 0, self.width, self.height), self.imageRef);
     CGContextRelease(self.context);
+    
+    
 }
 
 

@@ -142,16 +142,22 @@
     NSTimeInterval executionTime = [self.date timeIntervalSinceNow] * -1.0;
     float fractionOfSecond = 1/executionTime;
     
-
-    
-    
-    
-    CGPoint nextPoint = self.dot.point;
+    // how far is one pixel in the range of 0.0 .. 1.0?
+    CGFloat xDistancePerPixel = 1/(float)self.scannerImage.width;
+    CGFloat yDistancePerPixel = 1/(float)self.scannerImage.height;
     CGFloat deltaX = self.vector.runRatioPerSecond / fractionOfSecond;
     CGFloat deltaY = self.vector.riseRatioPerSecond / fractionOfSecond;
+    
+    NSInteger xPixelsToTravel = deltaX / xDistancePerPixel;
+    NSInteger yPixelsToTravel = deltaY / yDistancePerPixel;
+    
+    CGPoint nextPoint = self.dot.point;
+    
+    
     nextPoint.x += deltaX;
     nextPoint.y -= deltaY;
     
+    // Bounce off of the edges of the boundaries
     if(nextPoint.x >= 1.0){
         [self.vector reverseRun];
         nextPoint.x = 1.0;
@@ -160,7 +166,6 @@
         [self.vector reverseRun];
         nextPoint.x = 0.0;
     }
-    
     if(nextPoint.y >= 1.0){
         [self.vector reverseRise];
         nextPoint.y = 1.0;
@@ -170,6 +175,23 @@
         nextPoint.y = 0.0;
     }
 
+    
+    
+    if(self.scannerImage){
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     self.dot.point = nextPoint;
     
     if(self.scannerImage){

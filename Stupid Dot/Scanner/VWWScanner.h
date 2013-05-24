@@ -27,7 +27,7 @@ typedef enum{
 @property (nonatomic) BOOL renderDeflectionLine;
 @property (nonatomic, weak) VWWScannerImage *scannerImage;
 @property (nonatomic) float framesPerSecond;
-@property (nonatomic, strong) UIColor *colorAtDot; 
+@property (nonatomic, strong) UIColor *colorAtDot;
 
 
 -(id)initWithPoint:(CGPoint)point;
