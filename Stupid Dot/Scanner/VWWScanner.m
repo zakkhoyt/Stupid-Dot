@@ -56,6 +56,7 @@
     _deflection.color = [UIColor orangeColor];
     _colorAtDot = [UIColor greenColor];
     _borderType = VWWScannerBorderTypeBlack;
+    _reactionType = VWWScannerReactionTypeFollowLeft;
     _borderThreshold = 0.5;
     _renderProgressLine = YES;
     _renderDeflectionLine = YES;
@@ -147,25 +148,24 @@
     CGFloat yDistancePerPixel = 1/(float)self.scannerImage.height;
     CGFloat deltaX = self.vector.runRatioPerSecond / fractionOfSecond;
     CGFloat deltaY = self.vector.riseRatioPerSecond / fractionOfSecond;
-    
     NSInteger xPixelsToTravel = deltaX / xDistancePerPixel;
     NSInteger yPixelsToTravel = deltaY / yDistancePerPixel;
-    
-    
-    
-    // Now that we know how many pixesl x and y we are supposed to travel in one rrame,
-    // we can look for boundaries. 
-    
-    
-    
-    
-    
+    NSInteger hPixelsToTrave = sqrt(pow(xPixelsToTravel, 2) + pow(yPixelsToTravel, 2));
     CGPoint nextPoint = self.dot.point;
     
-    
+    //**** Update Position
+    // Now that we know how many pixesl x and y we are supposed to travel in one rrame,
+    // we can look for boundaries.
+    if(self.reactionType == VWWScannerReactionTypeFollowLeft){
+        
+    }
     nextPoint.x += deltaX;
     nextPoint.y -= deltaY;
     
+    
+    
+    
+    //**** Update Heading
     // Bounce off of the edges of the boundaries
     if(nextPoint.x >= 1.0){
         [self.vector reverseRun];
@@ -183,26 +183,15 @@
         [self.vector reverseRise];
         nextPoint.y = 0.0;
     }
-
-    
-    
-    if(self.scannerImage){
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     self.dot.point = nextPoint;
     
+    
+    
+    
+
+    //**** Update Dot Color
     if(self.scannerImage){
         self.colorAtDot = [self.scannerImage colorFromImageAtX:nextPoint.x andY:nextPoint.y];
 
@@ -236,6 +225,15 @@
     //[self processThereminFrequenciesFromPoint];
     
     self.date = [NSDate date];
+}
+
+-(void)processDotPosition{
+
+
+}
+
+-(void)processDotVector{
+
 }
 
 -(void)processThereminFrequenciesFromPoint{

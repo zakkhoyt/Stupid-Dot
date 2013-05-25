@@ -18,10 +18,17 @@ typedef enum{
     VWWScannerBorderTypeGreen = 3,
 } VWWScannerBorderType;
 
+typedef enum{
+    VWWScannerReactionTypeFollowLeft = 0,
+    VWWScannerReactionTypeFollowRight = 1,
+    VWWScannerReactionTypeBounce = 2,
+} VWWScannerReactionType;;
+
 @interface VWWScanner : NSObject
 @property (nonatomic, strong) VWWScannerDot *dot;
 @property (nonatomic, strong) VWWScannerVector *vector;
 @property (nonatomic) VWWScannerBorderType *borderType;
+@property (nonatomic) VWWScannerReactionType *reactionType;
 @property (nonatomic) float borderThreshold;
 @property (nonatomic) BOOL renderProgressLine;
 @property (nonatomic) BOOL renderDeflectionLine;
