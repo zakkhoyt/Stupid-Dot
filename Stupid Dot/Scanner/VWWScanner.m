@@ -151,6 +151,15 @@
     NSInteger xPixelsToTravel = deltaX / xDistancePerPixel;
     NSInteger yPixelsToTravel = deltaY / yDistancePerPixel;
     
+    
+    
+    // Now that we know how many pixesl x and y we are supposed to travel in one rrame,
+    // we can look for boundaries. 
+    
+    
+    
+    
+    
     CGPoint nextPoint = self.dot.point;
     
     

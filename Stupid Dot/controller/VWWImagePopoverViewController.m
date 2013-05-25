@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.contentSizeForViewInPopover = CGSizeMake(200, 400);
+    self.contentSizeForViewInPopover = CGSizeMake(200, 600);
     _imageNames = [@[@"white.jpg",
                    @"maze_01.jpg",
                    @"maze_02.jpg",

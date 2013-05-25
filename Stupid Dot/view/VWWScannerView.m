@@ -42,30 +42,48 @@
         CGFloat y = self.frame.size.height * scanner.dot.point.y;
         CGFloat red, green, blue, alpha;
         
-        {
-            // Draw a circle (filled)
+        {   // Draw a circle (filled)
             [scanner.dot.fillColor getRed:&red green:&green blue:&blue alpha:&alpha];
             CGFloat fillColor[4] = {red, green, blue, alpha};
             CGContextSetFillColor(cgContext, fillColor);
             CGContextFillEllipseInRect(cgContext, CGRectMake(x-(scanner.dot.radius/2.0), y-(scanner.dot.radius/2.0), scanner.dot.radius, scanner.dot.radius));
         }
         
-        {
-            // Draw a circle (border only)
+        {   // Draw a circle (border only)
             [scanner.dot.borderColor getRed:&red green:&green blue:&blue alpha:&alpha];
             CGFloat borderColor[4] = {red, green, blue, alpha};
             CGContextSetStrokeColor(cgContext, borderColor);
             CGContextStrokeEllipseInRect(cgContext, CGRectMake(x-(scanner.dot.radius/2.0), y-(scanner.dot.radius/2.0), scanner.dot.radius, scanner.dot.radius));
-            
+
         }
         
-        {
-            // Draw color at dot (filled) as half of the radiis
+        {   // Draw color at dot (filled) as half of the radiis
             [scanner.colorAtDot getRed:&red green:&green blue:&blue alpha:&alpha];
             CGFloat fillColor[4] = {red, green, blue, alpha};
             CGContextSetFillColor(cgContext, fillColor);
             CGContextFillEllipseInRect(cgContext, CGRectMake(x-(scanner.dot.radius/4.0), y-(scanner.dot.radius/4.0) , scanner.dot.radius/2.0, scanner.dot.radius/2.0));
         }
+        
+        
+        
+        {   // Render text
+            UIFont *font = [UIFont systemFontOfSize:11];
+            
+//            // colors
+//            NSString* text = [NSString stringWithFormat:@"%f %f %f", red, green, blue];
+            
+            // coordinates
+            NSString* text = [NSString stringWithFormat:@"(%d,%d)",
+                              (NSInteger)(scanner.dot.point.x * self.frame.size.width),
+                              (NSInteger)((scanner.dot.point.y * self.frame.size.height) - scanner.dot.radius)];
+            
+            CGRect rect = CGRectMake(scanner.dot.point.x * self.frame.size.width - scanner.dot.radius/2.0,
+                                     (scanner.dot.point.y * self.frame.size.height) - scanner.dot.radius,
+                                     scanner.dot.radius,
+                                     scanner.dot.radius);
+            [text drawInRect:rect withFont:font lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+        }
+        
         CGContextDrawPath(cgContext,kCGPathStroke);
     
     }
