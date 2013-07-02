@@ -144,13 +144,13 @@
     float fractionOfSecond = 1/executionTime;
     
     // how far is one pixel in the range of 0.0 .. 1.0?
-    CGFloat xDistancePerPixel = 1/(float)self.scannerImage.width;
-    CGFloat yDistancePerPixel = 1/(float)self.scannerImage.height;
+//    CGFloat xDistancePerPixel = 1/(float)self.scannerImage.width;
+//    CGFloat yDistancePerPixel = 1/(float)self.scannerImage.height;
     CGFloat deltaX = self.vector.runRatioPerSecond / fractionOfSecond;
     CGFloat deltaY = self.vector.riseRatioPerSecond / fractionOfSecond;
-    NSInteger xPixelsToTravel = deltaX / xDistancePerPixel;
-    NSInteger yPixelsToTravel = deltaY / yDistancePerPixel;
-    NSInteger hPixelsToTrave = sqrt(pow(xPixelsToTravel, 2) + pow(yPixelsToTravel, 2));
+//    NSInteger xPixelsToTravel = deltaX / xDistancePerPixel;
+//    NSInteger yPixelsToTravel = deltaY / yDistancePerPixel;
+//    NSInteger hPixelsToTravel = sqrt(pow(xPixelsToTravel, 2) + pow(yPixelsToTravel, 2));
     CGPoint nextPoint = self.dot.point;
     
     //**** Update Position

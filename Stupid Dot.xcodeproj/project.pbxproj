@@ -48,7 +48,6 @@
 		C62F81ED1744556D001A792A /* maze_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C62F81E91744556D001A792A /* maze_04.jpg */; };
 		C62F81F017445753001A792A /* maze_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C62F81EE17445753001A792A /* maze_02.jpg */; };
 		C62F81F117445753001A792A /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C62F81EF17445753001A792A /* white.jpg */; };
-		C64DC6CD17446BD9002CEE67 /* VWWImagePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */; };
 		C64DC6CE17446BD9002CEE67 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DC6CC17446BD9002CEE67 /* VWWViewController.m */; };
 		C69377F7174E964A006FBAB8 /* icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = C69377F6174E964A006FBAB8 /* icon_72x72.png */; };
 		C69377F9174E9650006FBAB8 /* icon_144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = C69377F8174E9650006FBAB8 /* icon_144x144.png */; };
@@ -155,8 +154,6 @@
 		C62F81E91744556D001A792A /* maze_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_04.jpg; sourceTree = "<group>"; };
 		C62F81EE17445753001A792A /* maze_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maze_02.jpg; sourceTree = "<group>"; };
 		C62F81EF17445753001A792A /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
-		C64DC6C917446BD9002CEE67 /* VWWImagePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWImagePopoverViewController.h; sourceTree = "<group>"; };
-		C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWImagePopoverViewController.m; sourceTree = "<group>"; };
 		C64DC6CB17446BD9002CEE67 /* VWWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWViewController.h; sourceTree = "<group>"; };
 		C64DC6CC17446BD9002CEE67 /* VWWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
 		C69377F6174E964A006FBAB8 /* icon_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_72x72.png; sourceTree = "<group>"; };
@@ -415,8 +412,6 @@
 			children = (
 				C64DC6CB17446BD9002CEE67 /* VWWViewController.h */,
 				C64DC6CC17446BD9002CEE67 /* VWWViewController.m */,
-				C64DC6C917446BD9002CEE67 /* VWWImagePopoverViewController.h */,
-				C64DC6CA17446BD9002CEE67 /* VWWImagePopoverViewController.m */,
 				C6F214F7174718670073B8A3 /* VWWThereminInputSettingsViewController.h */,
 				C6F214F8174718670073B8A3 /* VWWThereminInputSettingsViewController.m */,
 				C6F214FD174719010073B8A3 /* VWWThereminInputSettingsWaveformTableViewCell.h */,
@@ -678,7 +673,6 @@
 				C62F81E01744521B001A792A /* VWWScannerLine.m in Sources */,
 				C62F81E11744521B001A792A /* VWWScannerController.m in Sources */,
 				C62F81E21744521B001A792A /* VWWScannerVector.m in Sources */,
-				C64DC6CD17446BD9002CEE67 /* VWWImagePopoverViewController.m in Sources */,
 				C64DC6CE17446BD9002CEE67 /* VWWViewController.m in Sources */,
 				C698D8081745CFD100022CDF /* VWWThereminNotes.m in Sources */,
 				C698D8091745CFD100022CDF /* VWWThereminSynthesizer.mm in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "VWWViewController.h"
-#import "VWWImagePopoverViewController.h"
 #import "VWWScannerController.h"
 #import "VWWImageView.h"
 #import "VWWScannerView.h"
@@ -107,26 +106,7 @@ typedef enum {
         self.popoverViewController = ((UIStoryboardPopoverSegue*)segue).popoverController;
     }
     
-    if([segue.identifier isEqualToString:kSegueMainToImagePopover]){
-        VWWImagePopoverViewController *vc = segue.destinationViewController;
-        vc.completion = ^(NSString *imageName){
-            UIImage *image = [UIImage imageNamed:imageName];
-            [self.imageView setImage:image];
-            
-            [self.scannerController setImage:nil];
-            [self.scannerController setImage:image];
-
-            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-                [self.popoverViewController dismissPopoverAnimated:YES];
-            }
-            else{
-                [self dismissViewControllerAnimated:YES completion:^{}];
-            }
-        };
-        
-    
-    }
-    else if([segue.identifier isEqualToString:kSegueMainToDotsPopover]){
+    if([segue.identifier isEqualToString:kSegueMainToDotsPopover]){
         VWWDotsTableViewController *vc = segue.destinationViewController;
         vc.scannerController = self.scannerController;
         vc.audioBlock = ^(VWWScanner *scanner){
@@ -174,11 +154,11 @@ typedef enum {
     self.picker = [[UIImagePickerController alloc]init];
     self.imagePickerType = SMImagePickerTypeChooseExisting;
     self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    self.picker.allowsEditing = YES;
+    self.picker.allowsEditing = YES;
 	self.picker.delegate = self;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.popover = [[UIPopoverController alloc] initWithContentViewController:self.picker];
-        [self.popover presentPopoverFromRect:CGRectMake(100 ,100, 200, 500)/*self.loadImageButton.frame*/
+        [self.popover presentPopoverFromRect:self.loadImageButton.frame
                                        inView:self.view
                      permittedArrowDirections:UIPopoverArrowDirectionAny
                                      animated:YES];
@@ -199,7 +179,6 @@ typedef enum {
     
     // Present
     [self presentViewController:self.picker animated:YES completion:^{
-        //        self.picker.cameraOverlayView = overlayView;
     }];
 }
 
@@ -226,49 +205,22 @@ typedef enum {
 #pragma mark Implements UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-//    else{
     
-            UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-            if(image == nil){
-                image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-            }
-            self.imageView.image = image;
-            
-            
-            //        if(self.imagePickerType == SMImagePickerTypeTakePhoto){
-            //            [self.cameraMonitor saveImageToSmileAlbum:info[UIImagePickerControllerOriginalImage]
-            //                                             metadata:info[UIImagePickerControllerMediaMetadata]
-            //                                           completion:^(NSURL *url, NSError *error) {
-            //                                               if(error){
-            //                                                   NSLog(@"error: %@", error);
-            //                                               }
-            //                                               else{
-            //                                                   self.uploadButton.enabled = YES;
-            //                                                   NSLog(@"Saved image to disk at URL: %@", url.absoluteString);
-            //                                                   self.assetURLString = url.absoluteString;
-            //                                               }
-            //                                           }];
-            //
-            //        }
-            //        else{
-            //            self.uploadButton.enabled = YES;
-            //            self.assetURLString =  [info objectForKey:@"UIImagePickerControllerReferenceURL"];
-            //        }
-            
-            
-            
-            //        self.assetURLString = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
-            
-        [self.picker dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    if(image == nil){
+        image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    }
+    self.imageView.image = image;
+    
+
+    // Dismiss image picker and popover if ipad
+    [self.picker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         [self.popover dismissPopoverAnimated:YES];
     }
-
-//    }
     
-
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
@@ -277,9 +229,6 @@ typedef enum {
     }];
     
     self.imageView.image = nil;
-//    self.assetURLString = nil;
-//    self.uploadButton.enabled = NO;
-//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

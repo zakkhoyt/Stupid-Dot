@@ -9,7 +9,22 @@
 #import "VWWScannerAudioSettingsViewController.h"
 
 @interface VWWScannerAudioSettingsViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *xWavetypeLabel;
+@property (weak, nonatomic) IBOutlet UISlider *xWavetypeSlider;
+@property (weak, nonatomic) IBOutlet UILabel *xMinimiumFrequencyLabel;
+@property (weak, nonatomic) IBOutlet UISlider *xMinimumFrequencySlider;
+@property (weak, nonatomic) IBOutlet UILabel *xMaximimumFrequencyLabel;
+@property (weak, nonatomic) IBOutlet UISlider *xMaximumFrequencySlider;
+@property (weak, nonatomic) IBOutlet UILabel *xAmplitudeLabel;
+@property (weak, nonatomic) IBOutlet UISlider *xAmplitudeSlider;
+@property (weak, nonatomic) IBOutlet UILabel *yWavetypeLabel;
+@property (weak, nonatomic) IBOutlet UISlider *yWavetypeSlider;
+@property (weak, nonatomic) IBOutlet UILabel *yMinimumFrequencyLabel;
+@property (weak, nonatomic) IBOutlet UISlider *yMinimiumFrequencySlider;
+@property (weak, nonatomic) IBOutlet UILabel *yMaximumFrequencyLabel;
+@property (weak, nonatomic) IBOutlet UISlider *yMaximumFrequencySlider;
+@property (weak, nonatomic) IBOutlet UILabel *yAmplitudeLabel;
+@property (weak, nonatomic) IBOutlet UISlider *yAmplitudeSlider;
 @end
 
 @implementation VWWScannerAudioSettingsViewController
@@ -42,3 +57,4 @@
 }
 
 @end
+
