@@ -20,16 +20,29 @@ static NSString *kSegueMainToDotsPopover = @"segueMainToDotsPopover";
 static NSString *kSegueMainToAudioSettings = @"segueMainToAudioSettings";
 static NSString *kSegueMainToVisualSettings = @"segueMainToVisualSettings";
 
+typedef enum {
+    SMImagePickerTypeChooseExisting = 0,
+    SMImagePickerTypeTakePhoto = 1,
+} SMImagePickerType;
+
+
 @interface VWWViewController ()
+    <UINavigationControllerDelegate,
+    UIImagePickerControllerDelegate,
+    UITextViewDelegate>
+
 // GUI stuff
 @property (weak, nonatomic) IBOutlet UIButton *loadImageButton;
 @property (weak, nonatomic) IBOutlet VWWImageView *imageView;
 @property (nonatomic, strong) UIPopoverController *popoverViewController;
 @property (strong, nonatomic) IBOutlet VWWScannerView *scannerView;
+@property (nonatomic, strong) UIPopoverController *popover;
 
 // Other stuff
 @property (nonatomic, strong) VWWScannerController *scannerController;
 @property (nonatomic, strong) VWWScanner *tempScanner;
+@property (nonatomic) SMImagePickerType imagePickerType;
+@property (nonatomic, strong) UIImagePickerController *picker;
 @end
 
 
@@ -156,13 +169,47 @@ static NSString *kSegueMainToVisualSettings = @"segueMainToVisualSettings";
 }
 
 
+#pragma mark Private methods
+-(void)chooseExistingPhoto{
+    self.picker = [[UIImagePickerController alloc]init];
+    self.imagePickerType = SMImagePickerTypeChooseExisting;
+    self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    self.picker.allowsEditing = YES;
+	self.picker.delegate = self;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.popover = [[UIPopoverController alloc] initWithContentViewController:self.picker];
+        [self.popover presentPopoverFromRect:CGRectMake(100 ,100, 200, 500)/*self.loadImageButton.frame*/
+                                       inView:self.view
+                     permittedArrowDirections:UIPopoverArrowDirectionAny
+                                     animated:YES];
+    } else {
+        [self presentViewController:self.picker animated:YES completion:^{
+        }];
+    }
+}
 
+
+-(void)takePhoto{
+    self.picker = [[UIImagePickerController alloc]init];
+    self.imagePickerType = SMImagePickerTypeTakePhoto;
+    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    self.picker.allowsEditing = YES;
+	self.picker.delegate = self;
+    
+    
+    // Present
+    [self presentViewController:self.picker animated:YES completion:^{
+        //        self.picker.cameraOverlayView = overlayView;
+    }];
+}
 
 
 #pragma mark IBActions
 
 - (IBAction)loadImageButtonTouchUpInside:(id)sender {
-    [self performSegueWithIdentifier:kSegueMainToImagePopover sender:self];
+//    [self performSegueWithIdentifier:kSegueMainToImagePopover sender:self];
+    [self chooseExistingPhoto];
+
 }
 
 
@@ -173,6 +220,69 @@ static NSString *kSegueMainToVisualSettings = @"segueMainToVisualSettings";
 - (IBAction)editDotsButton:(id)sender {
     [self performSegueWithIdentifier:kSegueMainToDotsPopover sender:self];
 }
+
+
+
+#pragma mark Implements UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+//    else{
+    
+            UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+            if(image == nil){
+                image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+            }
+            self.imageView.image = image;
+            
+            
+            //        if(self.imagePickerType == SMImagePickerTypeTakePhoto){
+            //            [self.cameraMonitor saveImageToSmileAlbum:info[UIImagePickerControllerOriginalImage]
+            //                                             metadata:info[UIImagePickerControllerMediaMetadata]
+            //                                           completion:^(NSURL *url, NSError *error) {
+            //                                               if(error){
+            //                                                   NSLog(@"error: %@", error);
+            //                                               }
+            //                                               else{
+            //                                                   self.uploadButton.enabled = YES;
+            //                                                   NSLog(@"Saved image to disk at URL: %@", url.absoluteString);
+            //                                                   self.assetURLString = url.absoluteString;
+            //                                               }
+            //                                           }];
+            //
+            //        }
+            //        else{
+            //            self.uploadButton.enabled = YES;
+            //            self.assetURLString =  [info objectForKey:@"UIImagePickerControllerReferenceURL"];
+            //        }
+            
+            
+            
+            //        self.assetURLString = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
+            
+        [self.picker dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.popover dismissPopoverAnimated:YES];
+    }
+
+//    }
+    
+
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+    self.imageView.image = nil;
+//    self.assetURLString = nil;
+//    self.uploadButton.enabled = NO;
+//    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 
 @end
