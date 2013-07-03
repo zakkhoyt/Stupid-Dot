@@ -36,7 +36,6 @@ typedef enum{
 @property (nonatomic) float framesPerSecond;
 @property (nonatomic, strong) UIColor *colorAtDot;
 
-
 -(id)initWithPoint:(CGPoint)point;
 -(void)setRiseRatio:(float)riseRatio runRatio:(float)runRatio timeInterval:(NSTimeInterval)timeInterval;
 

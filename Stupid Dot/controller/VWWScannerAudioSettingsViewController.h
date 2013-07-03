@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class VWWScanner;
 
 typedef void (^VWWScannerAudioSettingsViewControllerDoneBlock)(void);
 
 @interface VWWScannerAudioSettingsViewController : UIViewController
 @property (nonatomic, strong) VWWScannerAudioSettingsViewControllerDoneBlock doneBlock;
+@property (nonatomic, strong) VWWScanner *scanner;
 @end

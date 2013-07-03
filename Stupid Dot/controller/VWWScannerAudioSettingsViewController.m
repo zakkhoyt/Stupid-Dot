@@ -7,6 +7,7 @@
 //
 
 #import "VWWScannerAudioSettingsViewController.h"
+#import "VWWScanner.h"
 
 @interface VWWScannerAudioSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *xWavetypeLabel;
@@ -41,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+//    self.xMinimumFrequencySlider.value = self.scanner.
 }
 
 - (void)didReceiveMemoryWarning

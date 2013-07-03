@@ -173,7 +173,7 @@ typedef enum {
     self.picker = [[UIImagePickerController alloc]init];
     self.imagePickerType = SMImagePickerTypeTakePhoto;
     self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    self.picker.allowsEditing = YES;
+    self.picker.allowsEditing = YES;
 	self.picker.delegate = self;
     
     
@@ -216,13 +216,6 @@ typedef enum {
     // Load image into scanner as well
     [self.scannerController setImage:nil];
     [self.scannerController setImage:image];
-    
-//    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-//        [self.popoverViewController dismissPopoverAnimated:YES];
-//    }
-//    else{
-//        [self dismissViewControllerAnimated:YES completion:^{}];
-//    }
     
 
     // Dismiss image picker and popover if ipad
