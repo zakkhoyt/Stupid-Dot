@@ -210,7 +210,19 @@ typedef enum {
     if(image == nil){
         image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     }
-    self.imageView.image = image;
+    
+    // Display image to user
+    [self.imageView setImage:image];
+    // Load image into scanner as well
+    [self.scannerController setImage:nil];
+    [self.scannerController setImage:image];
+    
+//    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+//        [self.popoverViewController dismissPopoverAnimated:YES];
+//    }
+//    else{
+//        [self dismissViewControllerAnimated:YES completion:^{}];
+//    }
     
 
     // Dismiss image picker and popover if ipad

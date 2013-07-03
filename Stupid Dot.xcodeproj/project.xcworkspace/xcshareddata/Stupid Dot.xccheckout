@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>36CB5475-708E-4694-A3CF-78906599230A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Stupid Dot</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6A087FB4-54AA-464E-AD81-06F1C2880391</key>
+		<string>ssh://github.com/zakkhoyt/Stupid-Dot.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Stupid Dot.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6A087FB4-54AA-464E-AD81-06F1C2880391</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/zakkhoyt/Stupid-Dot.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6A087FB4-54AA-464E-AD81-06F1C2880391</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6A087FB4-54AA-464E-AD81-06F1C2880391</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Stupid-Dot</string>
+		</dict>
+	</array>
+</dict>
+</plist>

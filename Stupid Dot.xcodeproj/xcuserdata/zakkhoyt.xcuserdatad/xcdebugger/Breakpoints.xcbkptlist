@@ -104,7 +104,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "98"
          endingLineNumber = "98"
-         landmarkName = "-drawRect:"
+         landmarkName = "-renderScanners:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -311,9 +311,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "133"
-         endingLineNumber = "133"
-         landmarkName = "-stopAllScanners"
-         landmarkType = "5">
+         endingLineNumber = "133">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -324,9 +322,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "132"
-         endingLineNumber = "132"
-         landmarkName = "-stopAllScanners"
-         landmarkType = "5">
+         endingLineNumber = "132">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -469,6 +465,58 @@
          startingLineNumber = "209"
          endingLineNumber = "209"
          landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Stupid Dot/Scanner/VWWScanner.m"
+         timestampString = "394512611.982138"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "114"
+         endingLineNumber = "114"
+         landmarkName = "-start"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Stupid Dot/view/VWWScannerView.m"
+         timestampString = "394512711.99416"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-drawRect:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Stupid Dot/Scanner/VWWScanner.m"
+         timestampString = "394512787.079932"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
+         landmarkName = "-process"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Stupid Dot/Scanner/VWWScanner.m"
+         timestampString = "394512819.520097"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "195"
+         endingLineNumber = "195"
+         landmarkName = "-process"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
